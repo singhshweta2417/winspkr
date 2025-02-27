@@ -5,6 +5,7 @@ import 'package:fomoplay/constants/app_button.dart';
 import 'package:fomoplay/constants/app_colors.dart';
 import 'package:fomoplay/constants/gradient_app_bar.dart';
 import 'package:fomoplay/constants/text_widget.dart';
+import 'package:fomoplay/main.dart';
 import 'package:image_picker/image_picker.dart';
 
 class SaveScreenShot extends StatefulWidget {
@@ -192,11 +193,15 @@ class _SaveScreenShotState extends State<SaveScreenShot> {
               style:
                   const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           const SizedBox(height: 20),
+          // Center(
+          //   child: qrCodeUrl.isNotEmpty
+          //       ? Image.network(qrCodeUrl.toString(),
+          //           height: 250, width: 250, fit: BoxFit.cover)
+          //       : const CircularProgressIndicator(),
+          // ),
           Center(
-            child: qrCodeUrl.isNotEmpty
-                ? Image.network(qrCodeUrl.toString(),
-                    height: 250, width: 250, fit: BoxFit.cover)
-                : const CircularProgressIndicator(),
+            child: Container(
+              height: 300, width: 300,color: Colors.blue,),
           ),
           const SizedBox(height: 20),
           Row(
@@ -235,10 +240,10 @@ class _SaveScreenShotState extends State<SaveScreenShot> {
           Center(
             child: uploadedImageUrl.isNotEmpty
                 ? Image.network(uploadedImageUrl,
-                    height: 250, width: 250, fit: BoxFit.cover)
+                    height: 150, width: 150, fit: BoxFit.cover)
                 : imagePath.isNotEmpty
                     ? Image.file(File(imagePath),
-                        height: 250, width: 250, fit: BoxFit.cover)
+                height: 150, width: 150, fit: BoxFit.cover)
                     : const Text("No image selected"),
           ),
           const SizedBox(height: 20),
