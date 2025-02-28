@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 
-class hidecoins extends StatelessWidget {
+class HideCoins extends StatelessWidget {
   final int otherData;
-  const hidecoins(this.otherData, {super.key});
+  const HideCoins(this.otherData, {super.key});
   @override
   Widget build(BuildContext context) {
     String imageUrl = '';

@@ -1,11 +1,11 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/wingo/controller/win_go_controller.dart';
-import 'package:fomoplay/view/wingo/model/win_go_my_his_model.dart';
-import 'package:fomoplay/view/wingo/repo/win_go_my_his_repo.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/wingo/controller/win_go_controller.dart';
+import 'package:wins_pkr/view/wingo/model/win_go_my_his_model.dart';
+import 'package:wins_pkr/view/wingo/repo/win_go_my_his_repo.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class WinGoMyHisViewModel with ChangeNotifier {
   final _winGoMyHisRepo=WinGoMyHisRepository();

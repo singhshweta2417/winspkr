@@ -2,14 +2,14 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/plinko/modal/plinko_bet_history.dart';
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/plinko/modal/plinko_bet_history.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 import 'package:http/http.dart' as http;
-import 'package:fomoplay/res/no_data_found.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/res/no_data_found.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:provider/provider.dart';
 
 

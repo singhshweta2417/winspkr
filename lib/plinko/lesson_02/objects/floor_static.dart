@@ -3,18 +3,17 @@ import 'dart:io';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:fomoplay/Plinko/my_game.dart';
+import 'package:wins_pkr/Plinko/my_game.dart';
 
-import 'package:fomoplay/plinko/lesson_02/objects/ball_dynamic.dart';
+import 'package:wins_pkr/plinko/lesson_02/objects/ball_dynamic.dart';
 import 'package:http/http.dart' as http;
-import 'package:fomoplay/plinko/modal/plinko_bet_history.dart';
-import 'package:fomoplay/plinko/utils/plinko_loss_popup.dart';
-import 'package:fomoplay/plinko/utils/plinko_win_popup.dart';
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/plinko/modal/plinko_bet_history.dart';
+import 'package:wins_pkr/plinko/utils/plinko_loss_popup.dart';
+import 'package:wins_pkr/plinko/utils/plinko_win_popup.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/extensions.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'dart:ui' as ui;
 
 
@@ -56,11 +55,9 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
   void beginContact(Object other, Contact contact) {
     if (other is BallDynamic) {
       final contactPoint = contact.manifold.localPoint;
-      print("Ball has fallen at position: $contactPoint");
 
       final ballPositions = contact.bodyB.position;
       final ballPosition = ballPositions.x;
-      print("Ball has fallen only: ${ballPositions.x}");
 
       plinkoBet(ballPosition);
     }
@@ -69,7 +66,6 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
   @override
   void endContact(Object other, Contact contact) {
     if (other is BallDynamic) {
-      print("End of contact between ball and floor");
     }
   }
 
@@ -80,8 +76,6 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
 
   String processBallPosition(double ballPosition) {
     if (ballPosition >= 1.0 && ballPosition <= 2.42) {
-      print(ballPosition);
-      print('rtu9o;opk7uy6');
       return '0';
     } else if (ballPosition > 2.42 && ballPosition <= 3.84) {
       return '1';
@@ -95,10 +89,6 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
   plinkoBet(double ballPosition) async {
     UserViewModel userViewModal = UserViewModel();
     String? userId = await userViewModal.getUser();
-    print(userId);
-    print("token");
-    print("ballPosition");
-    print(ballPosition);
 
     if (ballPosition >= 1.0 && ballPosition <= 2.42) {
       SetIndex = '1';
@@ -124,8 +114,6 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
     //   SetIndex = '9';
     // }
 
-    print(SetIndex);
-    print('SetIndex');
 
     final response = await http.post(
       Uri.parse(ApiUrl.plinkoMultiplier),
@@ -136,10 +124,7 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
     );
 
     if (response.statusCode == 200) {
-      print('api chalegi yaha');
       final Map<String, dynamic> responseData = jsonDecode(response.body);
-      print(responseData);
-      print("responseData");
       fetchPlinkoData();
       return Fluttertoast.showToast(msg: responseData['message']);
     } else {
@@ -157,28 +142,16 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
     String? userId = await userViewModal.getUser();
     try {
       final response = await http.get(Uri.parse("${ApiUrl.plinkoBetHistory}$userId&limit=1")).timeout(const Duration(seconds: 10));
-      print("${ApiUrl.plinkoBetHistory}$userId&limit=1");
-      print("ApiUrl.plinkoBetHistory");
-      print(response);
-      print("response bet history");
 
       if (response.statusCode == 200) {
 
         final jsonList = json.decode(response.body);
-        print(jsonList);
-        print("jsonList");
         if (jsonList['status'] == 200) {
           final List<dynamic> data = json.decode(response.body)['data'];
           if (data.isNotEmpty) {
             type = data[0]['type'].toString();
             multipler = data[0]['multipler'].toString();
             win_amount = data[0]['win_amount'].toString();
-            print(type);
-            print("type");
-            print(multipler);
-            print("multipler");
-            print(win_amount);
-            print("win_amount");
           }
 
           List<PlinkoBetHistory> plinkolist = data.map((jsonMap) => PlinkoBetHistory.fromJson(jsonMap)).toList();
@@ -206,13 +179,10 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
               ? ToastHelper.showwin(subtext1: type, subtext2: win_amount)
               : ToastLostHelper.showloss(subtext1: type, subtext2: win_amount);
 
-          print(win_amount);
-          print("a gyaaaaaa");
 
 
           return plinkolist;
         } else {
-          print("else");
           return null;
         }
       } else {
@@ -231,7 +201,6 @@ class FloorStatic extends BodyComponent with ContactCallbacks {
         print("plinkoBetData");
       }
     } catch (error) {
-      print('Error fetching plinko data: $error');
     }
   }
 

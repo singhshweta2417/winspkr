@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/AndarBahar/andar_home_page.dart';
-import 'package:fomoplay/Aviator/home_page_aviator.dart';
-import 'package:fomoplay/Plinko/my_game.dart';
-import 'package:fomoplay/dragon_tiger_new/dragon_tiger.dart';
-import 'package:fomoplay/plinko/lesson_02/game_lesson_02.dart';
-import 'package:fomoplay/view/bottom_nav_bar.dart';
-import 'package:fomoplay/view/me/widgets/add_bank.dart';
-import 'package:fomoplay/view/me/widgets/change_password.dart';
-import 'package:fomoplay/view/me/widgets/discount_page.dart';
-import 'package:fomoplay/view/me/widgets/message_page.dart';
-import 'package:fomoplay/view/me/widgets/order_page.dart';
-import 'package:fomoplay/view/me/widgets/personal_center_page.dart';
-import 'package:fomoplay/view/me/widgets/record_page.dart';
-import 'package:fomoplay/view/mines/mines.dart';
-import 'package:fomoplay/view/me/widgets/customer_service.dart';
-import 'package:fomoplay/view/promotion/widget/invitation_rules.dart';
-import 'package:fomoplay/view/promotion/widget/subordinate_data.dart';
-import 'package:fomoplay/view/splash_screen.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/view/auth/login_page.dart';
-import 'package:fomoplay/view/auth/register_page.dart';
-import 'package:fomoplay/view/trx/trx.dart';
+import 'package:wins_pkr/AndarBahar/andar_home_page.dart';
+import 'package:wins_pkr/Aviator/home_page_aviator.dart';
+import 'package:wins_pkr/Plinko/my_game.dart';
+import 'package:wins_pkr/dragon_tiger_new/dragon_tiger.dart';
+import 'package:wins_pkr/plinko/lesson_02/game_lesson_02.dart';
+import 'package:wins_pkr/view/bottom_nav_bar.dart';
+import 'package:wins_pkr/view/me/widgets/add_bank.dart';
+import 'package:wins_pkr/view/me/widgets/change_password.dart';
+import 'package:wins_pkr/view/me/widgets/discount_page.dart';
+import 'package:wins_pkr/view/me/widgets/message_page.dart';
+import 'package:wins_pkr/view/me/widgets/order_page.dart';
+import 'package:wins_pkr/view/me/widgets/personal_center_page.dart';
+import 'package:wins_pkr/view/me/widgets/record_page.dart';
+import 'package:wins_pkr/view/mines/mines.dart';
+import 'package:wins_pkr/view/me/widgets/customer_service.dart';
+import 'package:wins_pkr/view/promotion/widget/invitation_rules.dart';
+import 'package:wins_pkr/view/promotion/widget/subordinate_data.dart';
+import 'package:wins_pkr/view/splash_screen.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
+import 'package:wins_pkr/view/auth/login_page.dart';
+import 'package:wins_pkr/view/auth/register_page.dart';
+import 'package:wins_pkr/view/trx/trx.dart';
 
-import 'package:fomoplay/view/wingo/win_go.dart';
+import 'package:wins_pkr/view/wingo/win_go.dart';
 
 class Routers {
   static WidgetBuilder generateRoute(String routeName) {

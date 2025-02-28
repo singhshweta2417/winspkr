@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/repo/forget_pass_repo.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/utils/utils.dart';
+import 'package:wins_pkr/repo/forget_pass_repo.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
+import 'package:wins_pkr/utils/utils.dart';
 
 class ForgetPassViewModel with ChangeNotifier {
   final _forgetPassRepository = ForgetPassRepository();
@@ -42,16 +42,21 @@ class ForgetPassViewModel with ChangeNotifier {
     notifyListeners();
   }
 
-
   Future<void> sendOtp(dynamic phoneNumber, context) async {
     _forgetPassRepository.sendOtp(phoneNumber).then((value) {
       if (value['error'] == "200") {
         setIsOtpSend(true);
         setLoadingOne(false);
-        Utils.flushBarSuccessMessage(value['msg'].toString(), context,);
+        Utils.flushBarSuccessMessage(
+          value['msg'].toString(),
+          context,
+        );
       } else {
         setLoadingOne(false);
-        Utils.flushBarErrorMessage(value['msg'].toString(), context,);
+        Utils.flushBarErrorMessage(
+          value['msg'].toString(),
+          context,
+        );
       }
     }).onError((error, stackTrace) {
       setLoadingOne(false);
@@ -61,23 +66,28 @@ class ForgetPassViewModel with ChangeNotifier {
     });
   }
 
-  Future<void> verifyOtp(dynamic data, dynamic myControllers  , dynamic password ,context) async {
-    setLoadingOne(true);
-    _forgetPassRepository.verifyOtp(data , myControllers).then((value) {
-      if (value['error'] == "200") {
-      } else {
-        setLoadingOne(false);
-        Utils.flushBarSuccessMessage(value['message'].toString(), context,);
-      }
-    }).onError((error, stackTrace) {
-      setLoadingOne(false);
-      if (kDebugMode) {
-        print('error: $error');
-      }
-    });
-  }
+  // Future<void> verifyOtp(
+  //     dynamic data, dynamic password, context) async {
+  //   setLoadingOne(true);
+  //   _forgetPassRepository.verifyOtp(data).then((value) {
+  //     if (value['error'] == "200") {
+  //     } else {
+  //       setLoadingOne(false);
+  //       Utils.flushBarSuccessMessage(
+  //         value['message'].toString(),
+  //         context,
+  //       );
+  //     }
+  //   }).onError((error, stackTrace) {
+  //     setLoadingOne(false);
+  //     if (kDebugMode) {
+  //       print('error: $error');
+  //     }
+  //   });
+  // }
 
-  Future<void> forgetPassApi(dynamic phone , dynamic password , dynamic confirmPass,  context) async {
+  Future<void> forgetPassApi(
+      dynamic phone, dynamic password, dynamic confirmPass, context) async {
     setLoadingTwo(true);
     Map data = {
       "mobile": phone,
@@ -90,7 +100,10 @@ class ForgetPassViewModel with ChangeNotifier {
       } else {
         setLoadingTwo(false);
         Navigator.pushReplacementNamed(context, RoutesName.login);
-        Utils.flushBarSuccessMessage(value['message'].toString(), context,);
+        Utils.flushBarSuccessMessage(
+          value['message'].toString(),
+          context,
+        );
       }
     }).onError((error, stackTrace) {
       setLoadingTwo(false);
@@ -99,7 +112,4 @@ class ForgetPassViewModel with ChangeNotifier {
       }
     });
   }
-
-
-
 }

@@ -2,16 +2,14 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/dragon_tiger_new/dragon_tiger_url.dart';
-import 'package:fomoplay/dragon_tiger_new/model/betting_history_model.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/api_urls.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/dragon_tiger_new/model/betting_history_model.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/api_urls.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 
 class DragonTigerHistory extends StatefulWidget {
@@ -470,9 +468,6 @@ class _DragonTigerHistoryState extends State<DragonTigerHistory> {
       // Fetch userId
       UserViewModel userViewModal = UserViewModel();
       String? userId = await userViewModal.getUser();
-      print(userId);
-      print(widget.gameid);
-      print('pdmksfmgkmpkmhkpemjo');
       // Prepare the API request
       final response = await http.post(
         Uri.parse(ApiUrl.gameHistory),

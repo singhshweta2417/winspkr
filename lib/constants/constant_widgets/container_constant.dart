@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
 
 
 class SelectableContainer extends StatelessWidget {

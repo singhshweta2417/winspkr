@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/custom_text_field.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/auth_view_modal.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/custom_text_field.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/auth_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
@@ -200,13 +200,11 @@ class _RegisterState extends State<Register> {
                     } else if (email.text.isEmpty) {
                       Utils.flushBarErrorMessage("Enter Email", context);
                     } else {
-                      authViewModel.verifyOtp(
-                        phone.text,
-                        // otpCon.text,
-                        password.text,
-                        email.text,
-                        context,
-                      );
+                      authViewModel.registerApi(
+                          phone.text.toString(),
+                          password.text.toString(),
+                          email.text.toString(),
+                          context);
                     }
                   },
                   title: 'Register',

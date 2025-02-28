@@ -1,6 +1,4 @@
-
-
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 
 class TrxApiUrl {
   // base url
@@ -14,8 +12,8 @@ class TrxApiUrl {
 
   //wingo socket url
   static const String trxSocketUrl = "https://aviatorudaan.com";
-  static const String trxEvent30 = "fomotrx1";
-  static const String trxEvent1 = "fomotrx3";
-  static const String trxEvent3 = "fomotrx5";
-  static const String trxEvent5 = "fomotrx10";
+  static const String trxEvent30 = "wins_trx1";
+  static const String trxEvent1 = "wins_trx3";
+  static const String trxEvent3 = "wins_trx5";
+  static const String trxEvent5 = "wins_trx10";
 }

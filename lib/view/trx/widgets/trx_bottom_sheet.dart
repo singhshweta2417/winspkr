@@ -1,10 +1,10 @@
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/main.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view/trx/controller/trx_controller.dart';
-import 'package:fomoplay/view/trx/res/trx_text_widget.dart';
-import 'package:fomoplay/view/trx/view_model/trx_bet_view_model.dart';
+import 'package:wins_pkr/view/trx/controller/trx_controller.dart';
+import 'package:wins_pkr/view/trx/res/trx_text_widget.dart';
+import 'package:wins_pkr/view/trx/view_model/trx_bet_view_model.dart';
 
 class TrxBottomSheet extends StatefulWidget {
   final TrxComBetModel data;

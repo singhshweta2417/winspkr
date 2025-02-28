@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/model/subordinate_data_model.dart';
-import 'package:fomoplay/repo/subordinate_data_repo.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/model/subordinate_data_model.dart';
+import 'package:wins_pkr/repo/subordinate_data_repo.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class SubordinateDataViewModel with ChangeNotifier {
   final _subordinateDataRepo = SubordinateDataRepository();

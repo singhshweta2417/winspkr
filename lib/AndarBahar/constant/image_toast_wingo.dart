@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 
 class ImageToastWingo {

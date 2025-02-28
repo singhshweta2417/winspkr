@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/utils/utils.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/utils/utils.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
 
 class TrxWallet extends StatefulWidget {
   const TrxWallet({super.key});

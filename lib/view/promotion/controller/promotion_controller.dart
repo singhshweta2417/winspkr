@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
 
 class PromotionController with ChangeNotifier{
 

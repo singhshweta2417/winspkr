@@ -1,5 +1,5 @@
 // import 'package:flutter/cupertino.dart';
-// import 'package:fomoplay/generated/assets.dart';
+// import 'package:wins_pkr/generated/assets.dart';
 //
 // class LoadingButtonViewModel with ChangeNotifier {
 //   int _tabIndex = 0;

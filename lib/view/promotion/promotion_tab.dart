@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/constant_widgets/app_bar.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/promotion/controller/promotion_controller.dart';
-import 'package:fomoplay/view/promotion/widget/promotion_widget.dart';
-import 'package:fomoplay/view_modal/promotion_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/constants/constant_widgets/app_bar.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/promotion/controller/promotion_controller.dart';
+import 'package:wins_pkr/view/promotion/widget/promotion_widget.dart';
+import 'package:wins_pkr/view_modal/promotion_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class PromotionTab extends StatefulWidget {
   const PromotionTab({super.key});

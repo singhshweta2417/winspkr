@@ -3,8 +3,8 @@ import 'package:another_flushbar/flushbar_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/main.dart';
 
 class Utils {
   static void flushBarSuccessMessage(

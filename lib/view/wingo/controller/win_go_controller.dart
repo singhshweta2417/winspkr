@@ -2,15 +2,15 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/constant_widgets/audio.dart';
-import 'package:fomoplay/view/wingo/view_model/win_go_game_his_view_model.dart';
-import 'package:fomoplay/view/wingo/view_model/win_go_my_his_view_model.dart';
+import 'package:wins_pkr/constants/constant_widgets/audio.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_game_his_view_model.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_my_his_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/wingo/res/win_go_api_url.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/wingo/res/win_go_api_url.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
-import 'package:fomoplay/view/wingo/view_model/win_go_result_view_model.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_result_view_model.dart';
 
 class WinGoController with ChangeNotifier {
   final TextEditingController amount = TextEditingController(text: "1");
@@ -210,8 +210,6 @@ class WinGoController with ChangeNotifier {
 
     _socket.on(WinGoApiUrl.wingoEventTen, (response) {
       final res = jsonDecode(response);
-      print(res);
-      print("res 30");
       set1MinutesData(res['timerBetTime'], res['timerStatus']);
       if(gameIndex==0){
         if(res['timerBetTime']==1&&res['timerStatus']==1){
@@ -229,8 +227,6 @@ class WinGoController with ChangeNotifier {
 
     _socket.on(WinGoApiUrl.wingoEventOne, (response) {
       final res = jsonDecode(response);
-      print(res);
-      print("res 1");
       set3MinutesData(res['timerBetTime'], res['timerStatus']);
       if(gameIndex==1){
         if(res['timerBetTime']==1&&res['timerStatus']==1){
@@ -248,8 +244,6 @@ class WinGoController with ChangeNotifier {
 
     _socket.on(WinGoApiUrl.wingoEventThree, (response) {
       final res = jsonDecode(response);
-      print(res);
-      print("res 3");
       set5MinutesData(res['timerBetTime'], res['timerStatus']);
       if(gameIndex==2){
         if(res['timerBetTime']==1&&res['timerStatus']==1){
@@ -268,8 +262,6 @@ class WinGoController with ChangeNotifier {
 
     _socket.on(WinGoApiUrl.wingoEventFive, (response) {
       final res = jsonDecode(response);
-      print(res);
-      print("res 5");
       set10MinutesData(res['timerBetTime'], res['timerStatus']);
       if(gameIndex==3){
         if(res['timerBetTime']==1&&res['timerStatus']==1){

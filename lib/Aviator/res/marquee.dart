@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:fomoplay/Aviator/res/fade_edge.dart';
+import 'package:wins_pkr/Aviator/res/fade_edge.dart';
 
 class _IntegralCurve extends Curve {
 

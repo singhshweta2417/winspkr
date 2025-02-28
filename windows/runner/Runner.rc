@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.treamz.plinko" "\0"
-            VALUE "FileDescription", "fomoplay" "\0"
+            VALUE "FileDescription", "wins_pkr" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "fomoplay" "\0"
+            VALUE "InternalName", "wins_pkr" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.treamz.plinko. All rights reserved." "\0"
-            VALUE "OriginalFilename", "fomoplay.exe" "\0"
-            VALUE "ProductName", "fomoplay" "\0"
+            VALUE "OriginalFilename", "wins_pkr.exe" "\0"
+            VALUE "ProductName", "wins_pkr" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

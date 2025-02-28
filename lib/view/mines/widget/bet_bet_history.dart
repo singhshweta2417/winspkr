@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/mines/view_model/mine_bet_his_view_model.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/mines/view_model/mine_bet_his_view_model.dart';
 
 class MineBetHistory extends StatefulWidget {
   const MineBetHistory({super.key});
@@ -38,14 +38,14 @@ class _MineBetHistoryState extends State<MineBetHistory> {
               padding: const EdgeInsets.all(8.0),
               child: ListView(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
                   Row(
                     children: [
                       SizedBox(
                         width: width * 0.05,
                       ),
-                      Text(
+                      const Text(
                         'GAME HISTORY',
                         style: TextStyle(
                           fontSize: 18,
@@ -53,19 +53,19 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       IconButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.cancel_outlined,
                           color: Colors.white,
                         ),
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.white,
                   ),
                   SizedBox(
@@ -80,7 +80,7 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                             children: [
                               SizedBox(
                                 width: width * 0.25,
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     'Time',
                                     style: TextStyle(
@@ -93,7 +93,7 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                               ),
                               SizedBox(
                                 width: width * 0.15,
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     'Bet',
                                     style: TextStyle(
@@ -106,7 +106,7 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                               ),
                               SizedBox(
                                 width: width * 0.2,
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     'Cash out',
                                     style: TextStyle(
@@ -119,7 +119,7 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                               ),
                               SizedBox(
                                 width: width * 0.2,
-                                child: Text(
+                                child: const Text(
                                   'Multiplier',
                                   style: TextStyle(
                                     fontSize: 15,
@@ -130,18 +130,18 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                               ),
                             ],
                           ),
-                          Divider(
+                          const Divider(
                             color: Colors.white,
                           ),
                           mineBetHisViewModel.mineBetHisModelData == null ||
                                   mineBetHisViewModel
                                       .mineBetHisModelData!.data!.isEmpty
-                              ? NoDataAvailable()
+                              ? const NoDataAvailable()
                               : SizedBox(
                                   height: height * 0.55,
                                   child: ListView.builder(
                                       shrinkWrap: true,
-                                      physics: ScrollPhysics(),
+                                      physics: const ScrollPhysics(),
                                       itemCount: mineBetHisViewModel
                                           .mineBetHisModelData!.data!.length,
                                       itemBuilder: (context, index) {
@@ -156,7 +156,7 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                                                 height: height * 0.05,
                                                 width: width,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xff394c54),
+                                                  color: const Color(0xff394c54),
                                                   borderRadius:
                                                       BorderRadius.circular(5),
                                                 ),
@@ -171,7 +171,7 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                                                         child: Text(
                                                           res.createdAt
                                                               .toString(),
-                                                          style: TextStyle(
+                                                          style: const TextStyle(
                                                             fontSize: 10,
                                                             color: Colors.white,
                                                             fontWeight:
@@ -201,7 +201,7 @@ class _MineBetHistoryState extends State<MineBetHistory> {
                                                       child: Center(
                                                         child: Text(
                                                           "${res.winAmount!.toStringAsFixed(2)}Rs",
-                                                          style: TextStyle(
+                                                          style: const TextStyle(
                                                             fontSize: 12,
                                                             // color: int.parse(res
                                                             //             .winAmount

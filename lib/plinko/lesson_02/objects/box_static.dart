@@ -1,5 +1,5 @@
 import 'package:flame_forge2d/flame_forge2d.dart';
-import 'package:fomoplay/plinko/lesson_02/objects/ball_dynamic.dart';
+import 'package:wins_pkr/plinko/lesson_02/objects/ball_dynamic.dart';
 
 class BoxStatic extends BodyComponent with ContactCallbacks {
   double x;
@@ -33,9 +33,7 @@ class BoxStatic extends BodyComponent with ContactCallbacks {
 
   @override
   void beginContact(Object other, Contact contact) {
-    print("other $other");
     if (other is BallDynamic) {
-      print("HERE");
       // Add your collision handling logic here
     }
   }

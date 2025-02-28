@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/gradient_text.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/earn_money/widgets/about_faq.dart';
-import 'package:fomoplay/view/earn_money/widgets/about_list.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/gradient_text.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/earn_money/widgets/about_faq.dart';
+import 'package:wins_pkr/view/earn_money/widgets/about_list.dart';
 
 class AboutWidget extends StatelessWidget {
   const AboutWidget({super.key});
@@ -132,16 +132,16 @@ class AboutWidget extends StatelessWidget {
         SizedBox(
           height: height * 0.01,
         ),
-        Center(
-          child: const TextWidget(
+        const Center(
+          child: TextWidget(
             title: 'The table below shows how the rewards are assigned.',
                 fontSize: 10,
                 fontWeight: FontWeight.w400,
                 color: AppColors.whiteColor
           ),
         ),
-        SizedBox(height: 20,),
-        AboutList(),
+        const SizedBox(height: 20,),
+        const AboutList(),
         const Text(
           'FAQ',
           style: TextStyle(
@@ -149,7 +149,7 @@ class AboutWidget extends StatelessWidget {
               fontWeight: FontWeight.w400,
               color: AppColors.whiteColor),
         ),
-        AboutFaq(),
+        const AboutFaq(),
       ],
     );
   }

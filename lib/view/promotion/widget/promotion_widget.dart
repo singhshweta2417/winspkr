@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 import 'package:share_plus/share_plus.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/launcher.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/promotion/controller/promotion_controller.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/promotion_view_model.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/launcher.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/promotion/controller/promotion_controller.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/promotion_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class PromotionWidget extends StatelessWidget {
   const PromotionWidget({super.key});
@@ -265,7 +265,7 @@ class PromotionWidget extends StatelessWidget {
                   }),
               Container(
                 width: width * 0.9,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     gradient: AppColors.appBarGradient,
                     borderRadius: BorderRadius.circular(5)),

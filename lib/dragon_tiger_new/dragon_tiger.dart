@@ -6,26 +6,26 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/audio.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/dragon_tiger_new/coin/single_coin.dart';
-import 'package:fomoplay/dragon_tiger_new/model/result_game_history.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/dragon_tiger_Assets.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/dragon_toast.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/fade_animation.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/glory_border.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/image_tost.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/random_person.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/stroke_test.dart';
-import 'package:fomoplay/dragon_tiger_new/widgets/updown_border.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/api_urls.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/audio.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/dragon_tiger_new/coin/single_coin.dart';
+import 'package:wins_pkr/dragon_tiger_new/model/result_game_history.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/dragon_tiger_Assets.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/dragon_toast.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/fade_animation.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/glory_border.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/image_tost.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/random_person.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/stroke_test.dart';
+import 'package:wins_pkr/dragon_tiger_new/widgets/updown_border.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/api_urls.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 import 'coin/distribute_coin.dart';
@@ -72,7 +72,6 @@ class _DragonTigerState extends State<DragonTiger> {
     });
     if (Audio.audioPlayers.playing) {
       Audio.audioPlayers.stop();
-      print('kkkkllkk');
     }
     Audio.audioPlayers = AudioPlayer();
     Audio.DragonbgSound();
@@ -133,10 +132,10 @@ class _DragonTigerState extends State<DragonTiger> {
         builder: (context, profileProvider, child) {
       final userData = context.read<ProfileViewModel>().profileData;
       return Scaffold(
-        appBar: GradientAppBar(
+        appBar: const GradientAppBar(
           leading: AppBackBtn(),
           centerTitle: true,
-          title: const Text(
+          title: Text(
             'Dragon Tiger',
             style: TextStyle(
               color: Colors.white,
@@ -639,7 +638,7 @@ class _DragonTigerState extends State<DragonTiger> {
                             child: Center(
                               child: Text(
                                   'Rs${userData!.data!.wallet == null ? "" : userData.data!.wallet.toString()}',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: AppColors.goldColor,
                                       fontWeight: FontWeight.w600,
                                       fontSize: 13)),
@@ -826,9 +825,6 @@ class _DragonTigerState extends State<DragonTiger> {
     try {
       final url = Uri.parse('${ApiUrl.resultList}$gameIds&limit=1');
       final response = await http.get(url);
-      print(url);
-      print(widget.gameId);
-      print("ho gyaaaaaavvgdbsvddvb");
       if (response.statusCode == 200) {
         final responseData = json.decode(response.body)["data"][0];
         setState(() {
@@ -894,8 +890,6 @@ class _DragonTigerState extends State<DragonTiger> {
             .toList();
         gamesNo = int.parse(responseData1["games_no"].toString()) + 1;
       });
-      print(gamesNo);
-      print('gamesNoooooooo');
       // items.clear();
     } else if (response.statusCode == 400) {
       if (kDebugMode) {

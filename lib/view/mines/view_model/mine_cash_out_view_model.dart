@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/mines/controller/mine_controller.dart';
-import 'package:fomoplay/view/mines/repo/mine_cash_out_repo.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/mines/controller/mine_controller.dart';
+import 'package:wins_pkr/view/mines/repo/mine_cash_out_repo.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class MineCashOutViewModel with ChangeNotifier {
   final _mineCashOutRepo = MineCashOutRepository();

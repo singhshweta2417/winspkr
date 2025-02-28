@@ -4,29 +4,29 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/Aviator/res/api_url.dart';
-import 'package:fomoplay/Aviator/res/marquee.dart';
-import 'package:fomoplay/Aviator/widget/aviator_history.dart';
+import 'package:wins_pkr/Aviator/res/api_url.dart';
+import 'package:wins_pkr/Aviator/res/marquee.dart';
+import 'package:wins_pkr/Aviator/widget/aviator_history.dart';
 import 'dart:math' as math;
 import 'package:http/http.dart' as http;
-import 'package:fomoplay/constants/constant_widgets/audio.dart';
+import 'package:wins_pkr/constants/constant_widgets/audio.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
-import 'package:fomoplay/Aviator/aviator_constant/avaaitor_painter.dart';
-import 'package:fomoplay/Aviator/aviator_constant/avaitor_loading_page.dart';
-import 'package:fomoplay/Aviator/aviator_model/app_game_model.dart';
-import 'package:fomoplay/Aviator/aviator_model/result_history_model.dart';
-import 'package:fomoplay/Aviator/widget/small_toggel_switch.dart';
-import 'package:fomoplay/Aviator/widget/switch.dart';
-import 'package:fomoplay/Aviator/widget/toggel_switch.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/Aviator/aviator_constant/avaaitor_painter.dart';
+import 'package:wins_pkr/Aviator/aviator_constant/avaitor_loading_page.dart';
+import 'package:wins_pkr/Aviator/aviator_model/app_game_model.dart';
+import 'package:wins_pkr/Aviator/aviator_model/result_history_model.dart';
+import 'package:wins_pkr/Aviator/widget/small_toggel_switch.dart';
+import 'package:wins_pkr/Aviator/widget/switch.dart';
+import 'package:wins_pkr/Aviator/widget/toggel_switch.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class GameAviator extends StatefulWidget {
   const GameAviator({super.key});
@@ -698,7 +698,7 @@ class _GameAviatorState extends State<GameAviator>
                                             shrinkWrap: true,
                                             reverse: false,
                                             physics:
-                                                NeverScrollableScrollPhysics(),
+                                                const NeverScrollableScrollPhysics(),
                                             itemCount: dummyBets.length,
                                             itemBuilder: (BuildContext context,
                                                 int index) {
@@ -1426,7 +1426,7 @@ class _GameAviatorState extends State<GameAviator>
                                     height: height * 0.024,
                                   )),
                             ),
-                            Container(
+                            SizedBox(
                               // color: Colors.red,
                               width: width * 0.280,
                               child: TextFormField(
@@ -2262,7 +2262,7 @@ class _GameAviatorState extends State<GameAviator>
 
   double widths = 0;
 
-  Aviator(double height, double width) {
+  aviatorGame(double height, double width) {
     return SizedBox(
       height: height,
       width: width,

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/res/no_data_found.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/res/no_data_found.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 class HistoryWidget extends StatelessWidget {
   const HistoryWidget({super.key});

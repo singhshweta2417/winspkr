@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/trx/controller/trx_controller.dart';
-import 'package:fomoplay/view/trx/model/trx_my_bet_his_model.dart';
-import 'package:fomoplay/view/trx/repo/trx_my_bet_his_repo.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/trx/controller/trx_controller.dart';
+import 'package:wins_pkr/view/trx/model/trx_my_bet_his_model.dart';
+import 'package:wins_pkr/view/trx/repo/trx_my_bet_his_repo.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class TrxMyBetHisViewModel with ChangeNotifier {
   final _trxMyBetHisRepo = TrxMyBetHisRepository();

@@ -1,7 +1,7 @@
 import 'package:flame/palette.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:fomoplay/Plinko/my_game.dart';
+import 'package:wins_pkr/Plinko/my_game.dart';
 import 'package:flutter/material.dart';
 
 /// A class representing a static separator in the game, which extends BodyComponent
@@ -48,16 +48,13 @@ class SeparatorStatic extends BodyComponent with ContactCallbacks {
     final fixtureDef = FixtureDef(shape);
 
     // Print the position of each separator
-    print('Separator position: $adjustedX, ${worldSize.y - 0.15}');
 
     // Print the position of the first separator or the midpoint between separators
     if (previousX == null) {
       // This is the first separator
-      print('Initial separator position: $adjustedX, ${worldSize.y - 0.15}');
     } else {
       // Calculate and print the midpoint
       final midpointX = (previousX! + adjustedX) / 2;
-      print('Midpoint between separators: $midpointX, ${worldSize.y - 0.15}');
     }
 
     // Update previousX to the current adjusted x

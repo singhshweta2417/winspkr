@@ -1,16 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/auth/login_page.dart';
-import 'package:fomoplay/view/auth/register_page.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/auth/login_page.dart';
+import 'package:wins_pkr/view/auth/register_page.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -136,8 +136,6 @@ class AppBarPage extends StatelessWidget implements PreferredSizeWidget {
             IconButton(
               onPressed: () {
                 launchURL2(context);
-                print(launchURL2);
-                print("something is fishing");
               },
               icon: const Icon(Icons.download_for_offline,
                   color: AppColors.goldencolor),
@@ -158,8 +156,6 @@ class AppBarPage extends StatelessWidget implements PreferredSizeWidget {
     final userProfileViewModel = Provider.of<ProfileViewModel>(context, listen: false);
 
     var url = userProfileViewModel.profileData!.appDownloadLink.toString();
-    print(userProfileViewModel.profileData!.appDownloadLink.toString());
-    print("userProfileViewModel.profileData!.appDownloadLink.toString()");
     if (await canLaunch(url)) {
     await launch(url);
     } else {

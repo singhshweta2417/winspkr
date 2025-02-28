@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/model/redeem_gift_his_model.dart';
-import 'package:fomoplay/repo/redeem_gift_his_repo.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/model/redeem_gift_his_model.dart';
+import 'package:wins_pkr/repo/redeem_gift_his_repo.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class RedeemGiftHisViewModel with ChangeNotifier {
   final _redeemGiftHisRepo = RedeemGiftHisRepository();

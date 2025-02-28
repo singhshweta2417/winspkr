@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view/trx/view_model/trx_game_his_view_model.dart';
-import 'package:fomoplay/view/trx/view_model/trx_my_bet_his_view_model.dart';
+import 'package:wins_pkr/view/trx/view_model/trx_game_his_view_model.dart';
+import 'package:wins_pkr/view/trx/view_model/trx_my_bet_his_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/utils/utils.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/utils/utils.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
-import 'package:fomoplay/view/trx/res/trx_api_url.dart';
-import 'package:fomoplay/view/trx/view_model/trx_result_view_model.dart';
+import 'package:wins_pkr/view/trx/res/trx_api_url.dart';
+import 'package:wins_pkr/view/trx/view_model/trx_result_view_model.dart';
 
 class TrxController with ChangeNotifier {
 

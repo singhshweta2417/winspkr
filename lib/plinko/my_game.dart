@@ -10,22 +10,21 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/plinko/modal/plinko_bet_history.dart';
-import 'package:fomoplay/plinko/modal/plinko_result_model.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/plinko/modal/plinko_bet_history.dart';
+import 'package:wins_pkr/plinko/modal/plinko_result_model.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/plinko/lesson_02/objects/ball_dynamic.dart';
-import 'package:fomoplay/plinko/routes.dart';
-import 'package:fomoplay/plinko/utils/Plinko_history.dart';
-import 'package:fomoplay/res/api_urls.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/plinko/lesson_02/objects/ball_dynamic.dart';
+import 'package:wins_pkr/plinko/routes.dart';
+import 'package:wins_pkr/plinko/utils/Plinko_history.dart';
+import 'package:wins_pkr/res/api_urls.dart';
+import 'package:wins_pkr/utils/utils.dart';
 import 'lesson_02/objects/balance_hud.dart';
 import 'package:http/http.dart' as http;
 
@@ -958,13 +957,9 @@ class _MyGameWidgetState extends State<MyGameWidget> {
               ),
               itemBuilder: (BuildContext context, int index) {
                 const double price = 2; //number[index].price
-                Color textColor;
                 if (price > 1 && price < 2) {
-                  textColor = Colors.blue;
                 } else if (price >= 2 && price < 10) {
-                  textColor = Colors.purple;
                 } else {
-                  textColor = Colors.pink;
                 }
                 return Container(
                   height: height * 0.02,
@@ -1021,13 +1016,9 @@ class _MyGameWidgetState extends State<MyGameWidget> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
                 const double price = 1; //number[index].price
-                Color textColor;
                 if (price > 1 && price < 2) {
-                  textColor = Colors.blue;
                 } else if (price >= 2 && price < 10) {
-                  textColor = Colors.purple;
                 } else {
-                  textColor = Colors.pink;
                 }
                 return Padding(
                   padding: const EdgeInsets.fromLTRB(3, 5, 3, 5),
@@ -1152,7 +1143,6 @@ class _MyGameWidgetState extends State<MyGameWidget> {
       }
       setState(() {
         exitIndex = responseData['data']['status'];
-        print("exitIndex:$exitIndex");
         //  context.read<ProfileProvider>().fetchProfileData();
 
         if (type == '1') {

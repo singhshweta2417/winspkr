@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/custom_text_field.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/constant_wallet.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/view/new_pages_by_harsh/save_screen_shot.dart';
-import 'package:fomoplay/view_modal/deposit_view_modal.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/custom_text_field.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/constant_wallet.dart';
+import 'package:wins_pkr/view/new_pages_by_harsh/save_screen_shot.dart';
+import 'package:wins_pkr/view_modal/deposit_view_modal.dart';
+import 'package:wins_pkr/view_modal/paymode_view_model.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
 
 class Deposit extends StatefulWidget {
   const Deposit({super.key});
@@ -40,12 +40,13 @@ class _DepositState extends State<Deposit> {
     500,
     1000,
   ];
-  List<Map<String, String>> items = [
-    {'title': 'E-Wallet', 'image': Assets.iconsUpiIcon},
-  ];
+
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<PaymodeViewModel>(context, listen: false).payModeApi(context);
+    });
     depositCon.text = amountList[selectAmount].toString();
     usdtCon.addListener(() {
       final input = double.tryParse(usdtCon.text) ?? 0;
@@ -53,13 +54,14 @@ class _DepositState extends State<Deposit> {
                   .profileData!
                   .usdtPayinAmount *
               input)
-          .toStringAsFixed(2); // Format to 2 decimal places
+          .toStringAsFixed(2);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final depositViewModal = Provider.of<DepositViewModel>(context);
+    final paymodeViewModel = Provider.of<PaymodeViewModel>(context).paymodeData?.data;
     // final usdtRupeeCont = Provider.of<ProfileViewModel>(context, listen: false)
     //     .profileData!
     //     .usdtPayinAmount
@@ -107,7 +109,7 @@ class _DepositState extends State<Deposit> {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
-                  itemCount: items.length,
+                  itemCount: paymodeViewModel?.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -132,15 +134,12 @@ class _DepositState extends State<Deposit> {
                               ),
                               SizedBox(
                                   height: height * 0.05,
-                                  child: Image.asset(
-                                    items[index]['image']!,
-                                    fit: BoxFit.fill,
-                                  )),
+                                  child:paymodeViewModel!=null? Image.network(paymodeViewModel[index].image.toString()):const TextWidget(title: '',)),
                               const SizedBox(
                                 height: 10,
                               ),
                               Text(
-                                items[index]['title']!,
+                                  paymodeViewModel!=null? paymodeViewModel[index].name.toString():'',
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w900,
@@ -160,7 +159,7 @@ class _DepositState extends State<Deposit> {
               SizedBox(
                 height: height * 0.02,
               ),
-              selectedCard == 0
+              selectedCard == 1
                   ? Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
@@ -300,16 +299,8 @@ class _DepositState extends State<Deposit> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => SaveScreenShot(
+                                      builder: (context) => SaveScreenShot(type:"2",
                                           amount: depositCon.text.toString())));
-                              // UserViewModel userViewModal = UserViewModel();
-                              // String? userId = await userViewModal.getUser();
-                              // if (userId != null) {
-                              //   depositViewModal.payInApi(depositCon.text,
-                              //       selectedCard.toString(), context);
-                              // } else {
-                              //   Navigator.pushNamed(context, RoutesName.login);
-                              // }
                             },
                             title: 'Submit',
                             titleColor: AppColors.whiteColor,
@@ -319,7 +310,7 @@ class _DepositState extends State<Deposit> {
                         ],
                       ),
                     )
-                  : selectedCard == 1
+                  : selectedCard == 0
                       ? Container(
                           decoration: const BoxDecoration(
                               gradient: AppColors.appBarGradient),
@@ -449,10 +440,14 @@ class _DepositState extends State<Deposit> {
                                   readOnly: true,
                                   fillColor: AppColors.whiteColor,
                                   textColor: AppColors.blackColor,
-                                  prefixIcon: const Icon(
-                                    Icons.currency_rupee_outlined,
-                                    size: 20,
-                                    color: AppColors.lightBlack,
+                                  prefixIcon:const Padding(
+                                    padding: EdgeInsets.only(top: 8.0),
+                                    child: Text(
+                                      textAlign: TextAlign.center,
+                                      'Rs',
+                                      style: TextStyle(
+                                          fontSize: 20, fontWeight: FontWeight.w700),
+                                    ),
                                   ),
                                   keyboardType: TextInputType.number,
                                   suffixIcon: IconButton(
@@ -474,17 +469,12 @@ class _DepositState extends State<Deposit> {
                                   loading: depositViewModal.loading,
                                   width: width,
                                   onTap: () async {
-                                    UserViewModel userViewModal =
-                                        UserViewModel();
-                                    String? userId =
-                                        await userViewModal.getUser();
-                                    if (userId != null) {
-                                      depositViewModal.usdtPayIn(usdtCon.text,
-                                          selectedCard.toString(), context);
-                                    } else {
-                                      Navigator.pushNamed(
-                                          context, RoutesName.login);
-                                    }
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => SaveScreenShot(type:"3",
+                                                amount: usdtRupeeCon.text.toString()
+                                            )));
                                   },
                                   title: 'Submit',
                                   titleColor: AppColors.whiteColor,

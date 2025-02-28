@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/res/no_data_found.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/res/no_data_found.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 class DailyWidget extends StatelessWidget {
   const DailyWidget({super.key});
@@ -53,7 +53,7 @@ class DailyWidget extends StatelessWidget {
             ),
           ],
         ),
-      SizedBox(height: 10),
+      const SizedBox(height: 10),
       Container(
         height: height*0.2,
         width: width,
@@ -239,7 +239,7 @@ class DailyWidget extends StatelessWidget {
           ],
         ),
       ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         const TextWidget(
           textAlign: TextAlign.start,
           title: 'Yesterday Report (Total)',
@@ -248,7 +248,7 @@ class DailyWidget extends StatelessWidget {
           color: AppColors.whiteColor,
           fontWeight: FontWeight.bold,
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           height: height*0.1,
           width: width,
@@ -330,7 +330,7 @@ class DailyWidget extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           padding: const EdgeInsets.all(14),
           height: height*0.15,
@@ -451,7 +451,7 @@ class DailyWidget extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           padding: const EdgeInsets.all(14),
           height: height*0.15,
@@ -572,7 +572,7 @@ class DailyWidget extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           height: height*0.08,
           width: width,
@@ -615,7 +615,7 @@ class DailyWidget extends StatelessWidget {
             ],
           ),
         ),
-        Center(child: const NoDataFoundPage()),
+        const Center(child: NoDataFoundPage()),
       ],
     );
   }

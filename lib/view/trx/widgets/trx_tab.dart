@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view/trx/controller/trx_controller.dart';
-import 'package:fomoplay/view/trx/widgets/trx_chart.dart';
-import 'package:fomoplay/view/trx/widgets/trx_game_his.dart';
-import 'package:fomoplay/view/trx/widgets/trx_my_bet_his.dart';
+import 'package:wins_pkr/view/trx/controller/trx_controller.dart';
+import 'package:wins_pkr/view/trx/widgets/trx_chart.dart';
+import 'package:wins_pkr/view/trx/widgets/trx_game_his.dart';
+import 'package:wins_pkr/view/trx/widgets/trx_my_bet_his.dart';
 
 class TrxTab extends StatelessWidget {
   const TrxTab({super.key});

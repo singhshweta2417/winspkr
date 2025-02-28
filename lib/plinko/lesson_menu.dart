@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/plinko/routes.dart';
+import 'package:wins_pkr/plinko/routes.dart';
 
 class LessonMenu extends StatelessWidget {
   const LessonMenu({super.key});

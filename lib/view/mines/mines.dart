@@ -1,19 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view/wingo/res/size_const.dart';
+import 'package:wins_pkr/view/wingo/res/size_const.dart';
 
 import 'package:provider/provider.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/mines/controller/mine_controller.dart';
-import 'package:fomoplay/view/mines/view_model/mine_drop_down_view_model.dart';
-import 'package:fomoplay/view/mines/widget/mines_drawer.dart';
-import 'package:fomoplay/view/mines/res/mine_color.dart';
-import 'package:fomoplay/view/mines/view_model/mine_bet_view_model.dart';
-import 'package:fomoplay/view/mines/view_model/mine_cash_out_view_model.dart';
-import 'package:fomoplay/view/mines/widget/select_bet_amount.dart';
-import 'package:fomoplay/view/mines/widget/show_mine_pop_up.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/mines/controller/mine_controller.dart';
+import 'package:wins_pkr/view/mines/view_model/mine_drop_down_view_model.dart';
+import 'package:wins_pkr/view/mines/widget/mines_drawer.dart';
+import 'package:wins_pkr/view/mines/res/mine_color.dart';
+import 'package:wins_pkr/view/mines/view_model/mine_bet_view_model.dart';
+import 'package:wins_pkr/view/mines/view_model/mine_cash_out_view_model.dart';
+import 'package:wins_pkr/view/mines/widget/select_bet_amount.dart';
+import 'package:wins_pkr/view/mines/widget/show_mine_pop_up.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
 
 class Mines extends StatefulWidget {
   const Mines({super.key});
@@ -97,12 +96,12 @@ class _MinesState extends State<Mines> {
                                   ),
                                   child: Row(
                                     children: [
-                                      Text(
+                                      const Text(
                                         "Rs",
                                         style: TextStyle(color: Colors.white),
                                       ),
                                       Sizes.spaceWidth15,
-                                      Text(
+                                      const Text(
                                         'Bet',
                                         style: TextStyle(
                                             color: Colors.white,
@@ -111,8 +110,8 @@ class _MinesState extends State<Mines> {
                                       ),
                                       Sizes.spaceWidth10,
                                       Text(
-                                        "${mic.amountCon.text}",
-                                        style: TextStyle(
+                                        mic.amountCon.text,
+                                        style: const TextStyle(
                                           color: Colors.white,
                                         ),
                                       )

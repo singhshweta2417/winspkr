@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/repo/vip_reward_receive_repo.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/vip_reward_his_view_model.dart';
+import 'package:wins_pkr/repo/vip_reward_receive_repo.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/vip_reward_his_view_model.dart';
 
 class VipRewardReceiveViewModel with ChangeNotifier {
   final _vipRewardReceiveRepo = VipRewardReceiveRepository();

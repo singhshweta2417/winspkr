@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/mines/model/mine_bet_his_model.dart';
-import 'package:fomoplay/view/mines/repo/mine_bet_his_repo.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/mines/model/mine_bet_his_model.dart';
+import 'package:wins_pkr/view/mines/repo/mine_bet_his_repo.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class MineBetHisViewModel with ChangeNotifier {
   final _mineBetHisRepo = MineBetHisRepository();

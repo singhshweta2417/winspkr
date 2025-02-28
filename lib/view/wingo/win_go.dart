@@ -2,22 +2,22 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/constant_widgets/audio.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/constant_widgets/audio.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view/wingo/res/win_go_wallet.dart';
-import 'package:fomoplay/view/wingo/res/size_const.dart';
-import 'package:fomoplay/view/wingo/controller/win_go_controller.dart';
-import 'package:fomoplay/view/wingo/view_model/win_go_game_his_view_model.dart';
-import 'package:fomoplay/view/wingo/view_model/win_go_my_his_view_model.dart';
-import 'package:fomoplay/view/wingo/view_model/win_go_result_view_model.dart';
-import 'package:fomoplay/view/wingo/widgets/win_go_bottom_sheet.dart';
-import 'package:fomoplay/view/wingo/widgets/win_go_tab.dart';
+import 'package:wins_pkr/view/wingo/res/win_go_wallet.dart';
+import 'package:wins_pkr/view/wingo/res/size_const.dart';
+import 'package:wins_pkr/view/wingo/controller/win_go_controller.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_game_his_view_model.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_my_his_view_model.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_result_view_model.dart';
+import 'package:wins_pkr/view/wingo/widgets/win_go_bottom_sheet.dart';
+import 'package:wins_pkr/view/wingo/widgets/win_go_tab.dart';
 
 class WinGo extends StatefulWidget {
   const WinGo({super.key});
@@ -35,7 +35,6 @@ class _WinGoState extends State<WinGo> {
       wgc.connectToServer(context);
       if (Audio.audioPlayers.playing) {
         Audio.audioPlayers.stop();
-        print('kkkkllkk');
       }
       Audio.audioPlayers = AudioPlayer();
       final winGoResult = Provider.of<WinGoResultViewModel>(context, listen: false);
@@ -49,7 +48,6 @@ class _WinGoState extends State<WinGo> {
   Future<void> dispose() async {
     super.dispose();
     await Audio.audioPlayers.stop(); // Await the stop operation if it's async
-    print('Audio player stopped');
   }
 
 

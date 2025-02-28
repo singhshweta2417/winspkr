@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/jilli_dir/modal/games_grid_model.dart';
-import 'package:fomoplay/res/api_urls.dart';
-import 'package:fomoplay/res/launcher.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/jilli_dir/modal/games_grid_model.dart';
+import 'package:wins_pkr/res/api_urls.dart';
+import 'package:wins_pkr/res/launcher.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 

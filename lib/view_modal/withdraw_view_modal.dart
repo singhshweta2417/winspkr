@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/model/withdraw_history_model.dart';
-import 'package:fomoplay/repo/withdraw_repo.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/model/withdraw_history_model.dart';
+import 'package:wins_pkr/repo/withdraw_repo.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class WithdrawViewModel with ChangeNotifier {
   final _withdrawRepository = WithdrawRepository();
@@ -13,8 +13,6 @@ class WithdrawViewModel with ChangeNotifier {
   TextEditingController withdrawCon = TextEditingController();
   TextEditingController usdtAddress = TextEditingController();
   TextEditingController usdtAmount = TextEditingController();
-
-
 
   bool _loading = false;
   bool get loading => _loading;
@@ -77,7 +75,7 @@ class WithdrawViewModel with ChangeNotifier {
   }
 
   Future<void> withdrawApi(
-      dynamic withdrawCon, dynamic accountId, context) async {
+      dynamic withdrawCon, dynamic accountId, dynamic type, context) async {
     setLoading(true);
     final profileViewModel =
         Provider.of<ProfileViewModel>(context, listen: false);
@@ -86,7 +84,7 @@ class WithdrawViewModel with ChangeNotifier {
     Map data = {
       "user_id": userId,
       "account_id": accountId,
-      "type": "0",
+      "type": type,
       "amount": withdrawCon,
     };
     _withdrawRepository.withdrawApi(data).then((value) {
@@ -97,8 +95,7 @@ class WithdrawViewModel with ChangeNotifier {
         Utils.flushBarSuccessMessage(value['message'].toString(), context);
       } else {
         setLoading(false);
-        Utils.flushBarErrorMessage(
-            value['message'].toString(), context);
+        Utils.flushBarErrorMessage(value['message'].toString(), context);
       }
     }).onError((error, stackTrace) {
       setLoading(false);

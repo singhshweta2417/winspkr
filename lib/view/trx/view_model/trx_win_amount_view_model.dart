@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view/trx/model/trx_win_amount_model.dart';
-import 'package:fomoplay/view/trx/repo/trx_win_amount_repo.dart';
-import 'package:fomoplay/view/trx/widgets/trx_loss_pop_up.dart';
-import 'package:fomoplay/view/trx/widgets/trx_win_pop_up.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view/trx/model/trx_win_amount_model.dart';
+import 'package:wins_pkr/view/trx/repo/trx_win_amount_repo.dart';
+import 'package:wins_pkr/view/trx/widgets/trx_loss_pop_up.dart';
+import 'package:wins_pkr/view/trx/widgets/trx_win_pop_up.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class TrxWinAmountViewModel with ChangeNotifier {

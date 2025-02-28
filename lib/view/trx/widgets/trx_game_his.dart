@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/trx/res/trx_colors.dart';
-import 'package:fomoplay/view/trx/res/trx_text_widget.dart';
-import 'package:fomoplay/view/trx/view_model/trx_game_his_view_model.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/trx/res/trx_colors.dart';
+import 'package:wins_pkr/view/trx/res/trx_text_widget.dart';
+import 'package:wins_pkr/view/trx/view_model/trx_game_his_view_model.dart';
 
 class TrxGameHis extends StatefulWidget {
   const TrxGameHis({super.key});

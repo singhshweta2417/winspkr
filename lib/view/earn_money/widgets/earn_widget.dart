@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/gradient_text.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/gradient_text.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 class EarnWidget extends StatelessWidget {
   const EarnWidget({super.key});
@@ -56,9 +56,9 @@ class EarnWidget extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15,left: 10),
-          child: const TextWidget(
+        const Padding(
+          padding: EdgeInsets.only(bottom: 15,left: 10),
+          child: TextWidget(
             title: "Just copy or screenshot and send it to your friends",
             fontSize: 10,
             color: AppColors.whiteColor,
@@ -91,9 +91,9 @@ class EarnWidget extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15,left: 10),
-          child: const TextWidget(
+        const Padding(
+          padding: EdgeInsets.only(bottom: 15,left: 10),
+          child: TextWidget(
             title: "You can check your referred friends who registered with your code",
             fontSize: 10,
             color: AppColors.whiteColor,
@@ -125,9 +125,9 @@ class EarnWidget extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15,left: 10),
-          child: const TextWidget(
+        const Padding(
+          padding: EdgeInsets.only(bottom: 15,left: 10),
+          child: TextWidget(
             textAlign: TextAlign.start,
             title: "You will be rewarded, regardless if they win or lose. The more friends you\n"
                 "refer to SkyAce Club, the bigger your daily reward. Start earning daily\n"
@@ -172,7 +172,7 @@ class EarnWidget extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: AppColors.lighterMaroon,
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children:
                   [

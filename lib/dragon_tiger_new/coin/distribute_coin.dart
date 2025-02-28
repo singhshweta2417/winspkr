@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:fomoplay/dragon_tiger_new/coin/set_coin.dart';
+import 'package:wins_pkr/dragon_tiger_new/coin/set_coin.dart';
 
 class AnimatedCoin extends StatefulWidget {
   final int type;

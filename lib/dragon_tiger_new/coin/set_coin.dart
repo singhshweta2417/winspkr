@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:fomoplay/generated/assets.dart';
+import 'package:wins_pkr/generated/assets.dart';
 
 
 class CoinSpringAnimation extends StatefulWidget {

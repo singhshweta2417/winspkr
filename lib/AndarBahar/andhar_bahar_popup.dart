@@ -1,9 +1,9 @@
 // import 'dart:convert';
-// import 'package:fomoplay/constant_pages/constant_color.dart';
-// import 'package:fomoplay/constant_pages/no_found_data.dart';
-// import 'package:fomoplay/game_modal/wingo_betting_history.dart';
-// import 'package:fomoplay/main.dart';
-// import 'package:fomoplay/res/api_urls.dart';
+// import 'package:wins_pkr/constant_pages/constant_color.dart';
+// import 'package:wins_pkr/constant_pages/no_found_data.dart';
+// import 'package:wins_pkr/game_modal/wingo_betting_history.dart';
+// import 'package:wins_pkr/main.dart';
+// import 'package:wins_pkr/res/api_urls.dart';
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/material.dart';
 // import 'package:http/http.dart' as http;

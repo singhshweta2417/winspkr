@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/Aviator/view_model/aviator_history_view_model.dart';
+import 'package:wins_pkr/Aviator/view_model/aviator_history_view_model.dart';
 import 'package:provider/provider.dart';
 
 class AviatorHistory extends StatefulWidget {

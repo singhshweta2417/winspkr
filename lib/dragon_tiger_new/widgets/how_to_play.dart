@@ -1,7 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/main.dart';
 
 
 

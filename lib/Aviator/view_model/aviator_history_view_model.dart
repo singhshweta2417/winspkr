@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/Aviator/model/aviator_history_model.dart';
-import 'package:fomoplay/Aviator/repo/aviator_history_repo.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/Aviator/model/aviator_history_model.dart';
+import 'package:wins_pkr/Aviator/repo/aviator_history_repo.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 
 class AviatorHistoryViewModel with ChangeNotifier {

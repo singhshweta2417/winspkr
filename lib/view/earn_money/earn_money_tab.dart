@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/app_bar.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/earn_money/controller/earn_money_controller.dart';
-import 'package:fomoplay/view/earn_money/widgets/about_widget.dart';
-import 'package:fomoplay/view/earn_money/widgets/history_widget.dart';
-import 'package:fomoplay/view/earn_money/widgets/redeem_gift_widget.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/app_bar.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/earn_money/controller/earn_money_controller.dart';
+import 'package:wins_pkr/view/earn_money/widgets/about_widget.dart';
+import 'package:wins_pkr/view/earn_money/widgets/history_widget.dart';
+import 'package:wins_pkr/view/earn_money/widgets/redeem_gift_widget.dart';
 
 class EarnMoneyTab extends StatelessWidget {
   const EarnMoneyTab({super.key});
@@ -27,17 +27,17 @@ class EarnMoneyTab extends StatelessWidget {
           ),
           child: ListView(
             shrinkWrap: true,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             physics: const ScrollPhysics(),
             children: [
               const TabList(),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               if (emc.tabIndex == 0)
                 const AboutWidget()
               else if (emc.tabIndex == 1)
                 const HistoryWidget()
               else
-                RedeemGiftWidget()
+                const RedeemGiftWidget()
               // else if (emc.tabIndex == 2)
               //   const DailyWidget()
               // else

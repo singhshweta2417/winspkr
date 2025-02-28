@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/helper/network/base_api_services.dart';
-import 'package:fomoplay/helper/network/network_api_services.dart';
-import 'package:fomoplay/model/subordinate_tier_model.dart';
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/helper/network/base_api_services.dart';
+import 'package:wins_pkr/helper/network/network_api_services.dart';
+import 'package:wins_pkr/model/subordinate_tier_model.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 
 class SubordinateTierRepository{
   final BaseApiServices _apiServices = NetworkApiServices();

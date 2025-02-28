@@ -1,4 +1,4 @@
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 
 class DragonTigerUrl{
   // base url

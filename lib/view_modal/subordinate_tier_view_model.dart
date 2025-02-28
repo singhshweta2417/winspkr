@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/model/subordinate_tier_model.dart';
-import 'package:fomoplay/repo/subordinate_tier_repo.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/subordinate_data_view_model.dart';
+import 'package:wins_pkr/model/subordinate_tier_model.dart';
+import 'package:wins_pkr/repo/subordinate_tier_repo.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/subordinate_data_view_model.dart';
 
 class SubordinateTierViewModel with ChangeNotifier {
   final _subordinateTierRepo = SubordinateTierRepository();

@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/helper/network/base_api_services.dart';
-import 'package:fomoplay/helper/network/network_api_services.dart';
-import 'package:fomoplay/view/wingo/res/win_go_api_url.dart';
-import 'package:fomoplay/view/wingo/model/win_go_game_his_model.dart';
+import 'package:wins_pkr/helper/network/base_api_services.dart';
+import 'package:wins_pkr/helper/network/network_api_services.dart';
+import 'package:wins_pkr/view/wingo/res/win_go_api_url.dart';
+import 'package:wins_pkr/view/wingo/model/win_go_game_his_model.dart';
 
 class WinGoGameHisRepository {
   final BaseApiServices _apiServices = NetworkApiServices();

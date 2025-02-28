@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view/vip/widget/vip_text_widget.dart';
+import 'package:wins_pkr/view/vip/widget/vip_text_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view_modal/vip_reward_his_view_model.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view_modal/vip_reward_his_view_model.dart';
 
 class VipHistory extends StatefulWidget {
   const VipHistory({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 class AvaitorLoadingPage extends StatefulWidget {
   const AvaitorLoadingPage({super.key});
@@ -52,7 +52,7 @@ class _AvaitorLoadingPageState extends State<AvaitorLoadingPage> {
             children: [
               Image.asset(Assets.aviatorAviatorText, height: height * 0.035),
               Text(
-                " is a verifiably 100% Fomoplay",
+                " is a verifiably 100% wins_pkr",
                 style: TextStyle(fontSize: width * 0.04),
               ),
             ],

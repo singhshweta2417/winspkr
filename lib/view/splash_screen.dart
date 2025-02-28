@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view_modal/services_view_model.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view_modal/services_view_model.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

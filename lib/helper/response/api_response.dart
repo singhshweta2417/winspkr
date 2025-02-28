@@ -1,5 +1,5 @@
 
-import 'package:fomoplay/helper/response/status.dart';
+import 'package:wins_pkr/helper/response/status.dart';
 
 class ApiResponse<T> {
   Status? status;

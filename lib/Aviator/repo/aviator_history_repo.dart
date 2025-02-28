@@ -1,9 +1,9 @@
 
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/Aviator/model/aviator_history_model.dart';
-import 'package:fomoplay/Aviator/res/api_url.dart';
-import 'package:fomoplay/helper/network/base_api_services.dart';
-import 'package:fomoplay/helper/network/network_api_services.dart';
+import 'package:wins_pkr/Aviator/model/aviator_history_model.dart';
+import 'package:wins_pkr/Aviator/res/api_url.dart';
+import 'package:wins_pkr/helper/network/base_api_services.dart';
+import 'package:wins_pkr/helper/network/network_api_services.dart';
 
 
 class AviatorHistoryRepository {

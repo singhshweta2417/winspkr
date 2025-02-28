@@ -4,10 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:install_plugin/install_plugin.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/repo/update_apk_repo.dart';
-import 'package:fomoplay/res/app_const.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/repo/update_apk_repo.dart';
+import 'package:wins_pkr/res/app_const.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class SplashServices with ChangeNotifier {
   Future<bool> _checkUserSessionAndManageNavigation(context) async {
@@ -67,7 +67,7 @@ class SplashServices with ChangeNotifier {
   void _downloadAndInstall(context, String downloadUrl) async {
     Dio dio = Dio();
     var dir = await getExternalStorageDirectory();
-    String filePath = "${dir?.path}//fomoplay.apk";
+    String filePath = "${dir?.path}//wins_pkr.apk";
 
     await dio.download(
       downloadUrl,

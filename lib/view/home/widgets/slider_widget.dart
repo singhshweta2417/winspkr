@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view_modal/slider_view_modal.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view_modal/slider_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class SliderWidget extends StatefulWidget {
@@ -30,7 +30,7 @@ class SliderWidgetState extends State<SliderWidget> {
     final sliderViewModel = Provider.of<SliderViewModel>(context);
     if (sliderViewModel.sliderModelData != null) {
       return Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             CarouselSlider(

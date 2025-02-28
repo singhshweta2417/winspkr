@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/model/slider_modal.dart';
-import 'package:fomoplay/repo/slider_repo.dart';
-import 'package:fomoplay/utils/utils.dart';
+import 'package:wins_pkr/model/slider_modal.dart';
+import 'package:wins_pkr/repo/slider_repo.dart';
+import 'package:wins_pkr/utils/utils.dart';
 
 class SliderViewModel with ChangeNotifier {
   final _sliderRepository = SliderRepository();

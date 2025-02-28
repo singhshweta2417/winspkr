@@ -1,16 +1,16 @@
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view/vip/widget/vip_text_widget.dart';
+import 'package:wins_pkr/view/vip/widget/vip_text_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view/vip/widget/vip_show_list.dart';
-import 'package:fomoplay/view/vip/widget/vip_tab.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
-import 'package:fomoplay/view_modal/vip_reward_receive_view_model.dart';
-import 'package:fomoplay/view_modal/vip_show_list_view_model.dart';
+import 'package:wins_pkr/view/vip/widget/vip_show_list.dart';
+import 'package:wins_pkr/view/vip/widget/vip_tab.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view_modal/vip_reward_receive_view_model.dart';
+import 'package:wins_pkr/view_modal/vip_show_list_view_model.dart';
 
 
 class TestWidget extends StatefulWidget {
@@ -49,7 +49,7 @@ class _TestWidgetState extends State<TestWidget> {
       body: Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage(Assets.imagesAppBg),fit: BoxFit.fill)
         ),
         child: ListView(
@@ -79,7 +79,7 @@ class _TestWidgetState extends State<TestWidget> {
               decoration: BoxDecoration(
                   border: Border.all(color: AppColors.whiteColor, width: 1),
                   borderRadius: BorderRadius.circular(5)),
-              child: VipTextWidget(
+              child: const VipTextWidget(
                   text:
                   'VIP level rewards are settled at 2:00 am on the 1st of every month',
                   color: Colors.grey,
@@ -148,13 +148,13 @@ class _TestWidgetState extends State<TestWidget> {
               ),
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     children: [
-                      const Image(
+                      Image(
                         image: AssetImage(Assets.vipVipCrown),
                         height: 25,
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 10,
                       ),
                       VipTextWidget(

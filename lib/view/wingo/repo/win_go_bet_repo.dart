@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/helper/network/base_api_services.dart';
-import 'package:fomoplay/helper/network/network_api_services.dart';
-import 'package:fomoplay/view/wingo/res/win_go_api_url.dart';
+import 'package:wins_pkr/helper/network/base_api_services.dart';
+import 'package:wins_pkr/helper/network/network_api_services.dart';
+import 'package:wins_pkr/view/wingo/res/win_go_api_url.dart';
 
 class WinGoBetRepository {
   final BaseApiServices _apiServices = NetworkApiServices();

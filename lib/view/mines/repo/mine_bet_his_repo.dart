@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/helper/network/base_api_services.dart';
-import 'package:fomoplay/helper/network/network_api_services.dart';
-import 'package:fomoplay/view/mines/model/mine_bet_his_model.dart';
-import 'package:fomoplay/view/mines/res/mine_api_url.dart';
+import 'package:wins_pkr/helper/network/base_api_services.dart';
+import 'package:wins_pkr/helper/network/network_api_services.dart';
+import 'package:wins_pkr/view/mines/model/mine_bet_his_model.dart';
+import 'package:wins_pkr/view/mines/res/mine_api_url.dart';
 
 class MineBetHisRepository {
   final BaseApiServices _apiServices = NetworkApiServices();

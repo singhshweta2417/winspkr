@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/custom_text_field.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/bank_view_model.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/custom_text_field.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/bank_view_model.dart';
 import 'package:provider/provider.dart';
 
 class AddBankPopUp extends StatefulWidget {

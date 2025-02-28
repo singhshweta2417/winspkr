@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/wingo/res/size_const.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/wingo/res/size_const.dart';
 
 class LossPopUpPage extends StatelessWidget {
   final int winNumber;
@@ -123,7 +123,7 @@ class LossPopUpPage extends StatelessWidget {
                  Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextWidget(
+                    const TextWidget(
                       title: "Period : ",
                       fontSize: 12,
                       color: Colors.black26,

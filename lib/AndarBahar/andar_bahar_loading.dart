@@ -2,10 +2,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fomoplay/AndarBahar/andar_bahar_assets.dart';
-import 'package:fomoplay/AndarBahar/andar_home_page.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/AndarBahar/andar_bahar_assets.dart';
+import 'package:wins_pkr/AndarBahar/andar_home_page.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 
 class AndarBaharLoading extends StatefulWidget {
@@ -48,7 +48,7 @@ class AndarBaharLoadingState extends State<AndarBaharLoading> {
           Image.asset(AndarAssets.andarbaharLoading,height: height*0.40,),
             SizedBox(height: height*0.02,),
             Text(
-              "Andhar Bahar is a verifiable 100% Fomoplay",
+              "Andhar Bahar is a verifiable 100% wins_pkr",
               style: TextStyle(
                   fontSize: width*0.02,
                   color: Colors.white

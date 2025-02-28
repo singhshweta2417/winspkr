@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/model/profile_model.dart';
-import 'package:fomoplay/repo/profile_repo.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/model/profile_model.dart';
+import 'package:wins_pkr/repo/profile_repo.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class ProfileViewModel with ChangeNotifier {
   final _userProfileRepository = UserProfileRepository();

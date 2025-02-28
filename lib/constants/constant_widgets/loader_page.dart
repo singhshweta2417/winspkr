@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 
 class LoaderPage extends StatelessWidget {
   const LoaderPage({super.key});

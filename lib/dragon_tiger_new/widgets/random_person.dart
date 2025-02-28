@@ -1,4 +1,4 @@
-import 'package:fomoplay/generated/assets.dart';
+import 'package:wins_pkr/generated/assets.dart';
 
 
 final Map<String, dynamic> dragonTigerJson = {

@@ -1,19 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/app_bar.dart';
-import 'package:fomoplay/view/home/widgets/slider_widget.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/home/controller/home_controller.dart';
-import 'package:fomoplay/view/home/widgets/hot_widget.dart';
-import 'package:fomoplay/view/home/widgets/casino_widget.dart';
-import 'package:fomoplay/view/home/widgets/lobby_widget.dart';
-import 'package:fomoplay/view/home/widgets/sports_widget.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/app_bar.dart';
+import 'package:wins_pkr/view/home/widgets/slider_widget.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/home/controller/home_controller.dart';
+import 'package:wins_pkr/view/home/widgets/hot_widget.dart';
+import 'package:wins_pkr/view/home/widgets/casino_widget.dart';
+import 'package:wins_pkr/view/home/widgets/lobby_widget.dart';
+import 'package:wins_pkr/view/home/widgets/sports_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +23,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
 
   @override
   void initState() {

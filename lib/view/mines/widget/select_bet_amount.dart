@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view/mines/controller/mine_controller.dart';
+import 'package:wins_pkr/view/mines/controller/mine_controller.dart';
 
 class SelectBetAmount extends StatelessWidget {
   const SelectBetAmount({super.key});

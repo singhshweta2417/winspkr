@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/trx/controller/trx_controller.dart';
-import 'package:fomoplay/view/trx/model/trx_result_model.dart';
-import 'package:fomoplay/view/trx/repo/trx_result_repo.dart';
-import 'package:fomoplay/view/trx/view_model/trx_win_amount_view_model.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/trx/controller/trx_controller.dart';
+import 'package:wins_pkr/view/trx/model/trx_result_model.dart';
+import 'package:wins_pkr/view/trx/repo/trx_result_repo.dart';
+import 'package:wins_pkr/view/trx/view_model/trx_win_amount_view_model.dart';
 
 class TrxResultViewModel with ChangeNotifier {
   final _trxResultRepo = TrxResultRepository();

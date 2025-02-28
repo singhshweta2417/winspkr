@@ -3,15 +3,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/custom_text_field.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/model/subordinate_tier_model.dart';
-import 'package:fomoplay/view_modal/subordinate_data_view_model.dart';
-import 'package:fomoplay/view_modal/subordinate_tier_view_model.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/custom_text_field.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/model/subordinate_tier_model.dart';
+import 'package:wins_pkr/view_modal/subordinate_data_view_model.dart';
+import 'package:wins_pkr/view_modal/subordinate_tier_view_model.dart';
 
 class SubordinateDataPage extends StatefulWidget {
   const SubordinateDataPage({super.key});
@@ -79,7 +79,7 @@ class _SubordinateDataPageState extends State<SubordinateDataPage> {
                       '${subTier.tierModelData!.data![subData.selectedTier].id}',0,
                       search: search.text);
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.search,
                   color: Colors.grey,
                 ),
@@ -150,7 +150,7 @@ class _SubordinateDataPageState extends State<SubordinateDataPage> {
                 ),
               )
             else
-              Text('No data available!', style: TextStyle(color: Colors.white)),
+              const Text('No data available!', style: TextStyle(color: Colors.white)),
           ],
         ),
       ),
@@ -241,7 +241,7 @@ class TierBottomSheetState extends State<TierBottomSheet> {
       builder: (BuildContext context) {
         return Container(
           height: height * 0.3,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: AppColors.appBarGradient,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(15), topRight: Radius.circular(15))),
@@ -587,7 +587,7 @@ class DateWidgetState extends State<DateWidget> {
       builder: (BuildContext context) {
         return Container(
           height: height * 0.3,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: AppColors.appBarGradient,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(15), topRight: Radius.circular(15))),
@@ -616,18 +616,18 @@ class DateWidgetState extends State<DateWidget> {
                 ],
               ),
               const SizedBox(height: 20),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const Text(
+                  Text(
                     'Year',
                     style: TextStyle(fontSize: 14, color: Colors.white),
                   ),
-                  const Text(
+                  Text(
                     'Month',
                     style: TextStyle(fontSize: 14, color: Colors.white),
                   ),
-                  const Text(
+                  Text(
                     'Day',
                     style: TextStyle(fontSize: 14, color: Colors.white),
                   ),

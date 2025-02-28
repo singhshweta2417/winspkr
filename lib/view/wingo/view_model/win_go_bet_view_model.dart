@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/wingo/controller/win_go_controller.dart';
-import 'package:fomoplay/view/wingo/repo/win_go_bet_repo.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/wingo/controller/win_go_controller.dart';
+import 'package:wins_pkr/view/wingo/repo/win_go_bet_repo.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class WinGoBetViewModel with ChangeNotifier {
   final _winGoBetRepo = WinGoBetRepository();

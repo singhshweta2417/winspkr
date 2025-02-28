@@ -4,8 +4,8 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:fomoplay/helper/app_exception.dart';
-import 'package:fomoplay/helper/network/base_api_services.dart';
+import 'package:wins_pkr/helper/app_exception.dart';
+import 'package:wins_pkr/helper/network/base_api_services.dart';
 
 class NetworkApiServices extends BaseApiServices {
   @override

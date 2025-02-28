@@ -4,9 +4,9 @@
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/material.dart';
 // import 'package:http/http.dart' as http;
-// import 'package:fomoplay/Aviator/aviator_model/my_bet_model.dart';
-// import 'package:fomoplay/view/aviator/res/mine_api_url.dart';
-// import 'package:fomoplay/view_modal/user_view_modal.dart';
+// import 'package:wins_pkr/Aviator/aviator_model/my_bet_model.dart';
+// import 'package:wins_pkr/view/aviator/res/mine_api_url.dart';
+// import 'package:wins_pkr/view_modal/user_view_modal.dart';
 //
 //
 // class AllBets {

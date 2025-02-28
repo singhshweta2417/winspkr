@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/AndarBahar/constant/game_history.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/dragon_tiger_new/model/betting_history_model.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/AndarBahar/constant/game_history.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/dragon_tiger_new/model/betting_history_model.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 import 'package:http/http.dart' as http;
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 
 
@@ -49,7 +49,7 @@ class _AndarBaharHistoryState extends State<AndarBaharHistory> {
                 )),
           ),
           centerTitle: true,
-          title: Text(
+          title: const Text(
             "Game History",
             style: TextStyle(
               fontWeight: FontWeight.w900,
@@ -61,7 +61,7 @@ class _AndarBaharHistoryState extends State<AndarBaharHistory> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(Assets.imagesAppBg),
             fit: BoxFit.fill,
@@ -369,7 +369,7 @@ class _AndarBaharHistoryState extends State<AndarBaharHistory> {
                 Text(
                   '$pageNumber/${itemsDataHistory.length}',
                   maxLines: 1,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.primaryTextColor,
@@ -503,9 +503,6 @@ class _AndarBaharHistoryState extends State<AndarBaharHistory> {
       // Fetch userId
       UserViewModel userViewModal = UserViewModel();
       String? userId = await userViewModal.getUser();
-      print(userId);
-      print(widget.gameid);
-      print('pdmksfmgkmpkmhkpemjo');
       // Prepare the API request
       final response = await http.post(
         Uri.parse(ApiUrl.gameHistory),

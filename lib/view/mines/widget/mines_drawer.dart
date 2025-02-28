@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/Aviator/widget/switch.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/mines/widget/bet_bet_history.dart';
+import 'package:wins_pkr/Aviator/widget/switch.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/mines/widget/bet_bet_history.dart';
 
 class MinesDrawer extends StatefulWidget {
   const MinesDrawer({super.key});

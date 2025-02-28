@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/mines/controller/mine_controller.dart';
-import 'package:fomoplay/view/mines/res/mine_color.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/mines/controller/mine_controller.dart';
+import 'package:wins_pkr/view/mines/res/mine_color.dart';
 
 class ShowMinePopUp extends StatelessWidget {
   const ShowMinePopUp({super.key});
@@ -28,7 +28,7 @@ class ShowMinePopUp extends StatelessWidget {
                     image: DecorationImage(
                         image: AssetImage(Assets.minesHowToPlayHeader),
                         fit: BoxFit.fill)),
-                child: Center(
+                child: const Center(
                     child: Text(
                       'You Lose',
                       style: TextStyle(

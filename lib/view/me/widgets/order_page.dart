@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/container_constant.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view_modal/deposit_view_modal.dart';
-import 'package:fomoplay/view_modal/withdraw_view_modal.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/container_constant.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view_modal/deposit_view_modal.dart';
+import 'package:wins_pkr/view_modal/withdraw_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class OrderScreen extends StatefulWidget {
@@ -142,7 +142,6 @@ class _OrderScreenState extends State<OrderScreen> {
                          depositViewModel.setSelectCard(index);
                         withdrawViewModel.withdrawHistoryApi(context, withdrawViewModel.selectedCard);
                         depositViewModel.depositHistoryApi(context,depositViewModel.selectedCard);
-                        print('Selected Card: ${withdrawViewModel.selectedCard}');
                       },
                       child: Card(
                         child: Container(

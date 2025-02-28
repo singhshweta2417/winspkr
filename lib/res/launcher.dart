@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:fomoplay/utils/utils.dart';
+import 'package:wins_pkr/utils/utils.dart';
 
 class Launcher {
   static launchWhatsApp(context, String phone) async {

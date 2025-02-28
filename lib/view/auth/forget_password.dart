@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/custom_text_field.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/forget_pass_view_modal.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/custom_text_field.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/forget_pass_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
@@ -56,27 +55,15 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(Assets.imagesAppBg), fit: BoxFit.fill)),
-          child: !forgetPassViewModel.showPasswordFields ? sendOtp(forgetPassViewModel) : createNewPassword(forgetPassViewModel),
+          child: createNewPassword(forgetPassViewModel),
         ),
       ),
     );
   }
 
-  Widget sendOtp(ForgetPassViewModel forgetPassViewModel) {
+  Widget createNewPassword(ForgetPassViewModel forgetPassViewModel) {
     return Column(
       children: [
-        SizedBox(height: height * 0.02),
-        Padding(
-          padding: EdgeInsets.only(right: width * 0.50),
-          child: const Text(
-            'Phone Number',
-            style: TextStyle(
-              fontWeight: FontWeight.w400,
-              fontSize: 16,
-              color: AppColors.whiteColor,
-            ),
-          ),
-        ),
         CustomTextField(
           margin: const EdgeInsets.all(5),
           onChanged: (value) {},
@@ -86,66 +73,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           hintText: 'Enter Mobile number',
           cursorColor: AppColors.whiteColor,
           hintColor: Colors.grey,
-        ),
-        if (forgetPassViewModel.isOtpSend)
-          CustomTextField(
-            controller: verifyCode,
-            prefixIcon: const Icon(Icons.verified_user, color: Colors.red),
-            maxLines: 1,
-            hintText: 'Verification code',
-            onChanged: (value) {
-              if (value.length == 4) {
-                  forgetPassViewModel.verifyOtp(
-                    phoneCon.text,
-                    verifyCode.text,
-                    newPasswordCon.text,
-                    context,
-                  );
-                  forgetPassViewModel.setShowPasswordFields(true);
-              }
-
-            },
-          )
-        else
-          const SizedBox(),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-          child: AppBtn(
-            onTap: () {
-              if(phoneCon.text.length == 10){
-                forgetPassViewModel.sendOtp(phoneCon.text, context);
-              }else{
-                Utils.flushBarErrorMessage("Enter a valid mobile number", context);
-              }
-            },
-            title: "Send Otp",
-            titleColor: Colors.white,
-            color: AppColors.blackColor,
-          ),
-        ),
-        const SizedBox(height: 5),
-      ],
-    );
-  }
-
-  Widget createNewPassword(ForgetPassViewModel forgetPassViewModel) {
-    return Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'OTP Has Been Sent To your Phone Number,\n Please Enter New Password',
-            style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 15, color: AppColors.whiteColor),
-          ),
-        ),
-        CustomTextField(
-          controller: phoneCon,
-          maxLines: 1,
-          hintText: 'Phone number',
-          fieldRadius: BorderRadius.circular(30),
-          margin: const EdgeInsets.all(10),
-          enabled: false,
         ),
         CustomTextField(
           obscureText: hideSetPassword,

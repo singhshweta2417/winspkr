@@ -1,10 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/repo/auth_repo.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/repo/auth_repo.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class AuthViewModel with ChangeNotifier {
@@ -65,76 +64,6 @@ class AuthViewModel with ChangeNotifier {
       }
     });
   }
-
-  // Future<void> sendOtp(dynamic data, dynamic context) async {
-  //   _authRepository.sendOtp(data).then((value) {
-  //     if (value['error'] == "200") {
-  //       setLoadingTwo(false);
-  //       setShowContainer(true);
-  //       Utils.flushBarSuccessMessage(
-  //         value['msg'].toString(),
-  //         context,
-  //       );
-  //     } else {
-  //       setLoadingTwo(false);
-  //       Utils.flushBarErrorMessage(
-  //         value['msg'].toString(),
-  //         context,
-  //       );
-  //     }
-  //   }).onError((error, stackTrace) {
-  //     setLoadingTwo(false);
-  //     if (kDebugMode) {
-  //       print('error: $error');
-  //     }
-  //   });
-  // }
-  //
-  Future<void> verifyOtp(
-      dynamic data, dynamic password, dynamic email, context) async {
-    setLoadingOne(true);
-    _authRepository.verifyOtp(data).then((value) {
-      if (value['error'] == "200") {
-        // setLoading(false);
-        registerApi(data.toString(), password.toString(), email.toString(),context);
-      } else {
-        setLoadingOne(false);
-        Utils.flushBarErrorMessage(
-          value['message'].toString(),
-          context,
-        );
-      }
-    }).onError((error, stackTrace) {
-      setLoadingOne(false);
-      if (kDebugMode) {
-        print('error: $error');
-      }
-    });
-  }
-
-  // Future<void> checkExistNumber(dynamic phone, context) async {
-  //   setLoadingTwo(true);
-  //   Map data = {
-  //     "mobile": phone,
-  //   };
-  //   _authRepository.checkExistNumber(data).then((value) {
-  //     if (value['status'] == 200) {
-  //       sendOtp(phone.toString(), context);
-  //     } else {
-  //       setLoadingTwo(false);
-  //       Navigator.pushReplacementNamed(context, RoutesName.login);
-  //       Utils.flushBarErrorMessage(
-  //         value['message'].toString(),
-  //         context,
-  //       );
-  //     }
-  //   }).onError((error, stackTrace) {
-  //     setLoadingTwo(false);
-  //     if (kDebugMode) {
-  //       print('error: $error');
-  //     }
-  //   });
-  // }
 
   Future<void> loginApi(dynamic data, context) async {
     final user = Provider.of<UserViewModel>(context, listen: false);

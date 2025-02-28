@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui' as ui;
 
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/main.dart';
 
 
 class AndarBaharToast {

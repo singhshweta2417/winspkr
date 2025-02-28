@@ -1,4 +1,4 @@
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 
 class WinGoApiUrl{
   // base url
@@ -12,11 +12,13 @@ class WinGoApiUrl{
   static const String winGoLastResult = "${baseUrl}last_five_result?limit=5&game_id=";
 
   //wingo socket url
+
   static const String wingoSocketUrl = "https://aviatorudaan.com";
-  static const String wingoEventOne = "fomoplay1";
-  static const String wingoEventThree = "fomoplay3";
-  static const String wingoEventFive = "fomoplay5";
-  static const String wingoEventTen = "fomoplay30";
+  static const String wingoEventOne = "wins_pkr1";
+  static const String wingoEventThree = "wins_pkr3";
+  static const String wingoEventFive = "wins_pkr5";
+  static const String wingoEventTen = "wins_pkr30";
+
 }
 
 

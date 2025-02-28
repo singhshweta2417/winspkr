@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/view/auth/login_page.dart';
-import 'package:fomoplay/view/earn_money/earn_money_tab.dart';
-import 'package:fomoplay/view/home/home.dart';
-import 'package:fomoplay/view/me/me_page.dart';
-import 'package:fomoplay/view/new_pages_by_harsh/deposit_screen.dart';
-import 'package:fomoplay/view/promotion/promotion_tab.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/view/auth/login_page.dart';
+import 'package:wins_pkr/view/earn_money/earn_money_tab.dart';
+import 'package:wins_pkr/view/home/home.dart';
+import 'package:wins_pkr/view/me/me_page.dart';
+import 'package:wins_pkr/view/new_pages_by_harsh/deposit_screen.dart';
+import 'package:wins_pkr/view/promotion/promotion_tab.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class BottomNavBar extends StatefulWidget {
   final int initialIndex;

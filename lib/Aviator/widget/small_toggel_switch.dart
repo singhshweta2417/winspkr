@@ -82,15 +82,15 @@ class _SmallSlidingSwitch extends State<SmallSlidingSwitch>
     return GestureDetector(
         onDoubleTap: () {
           _action();
-          if (widget.onDoubleTap != null) widget.onDoubleTap();
+          widget.onDoubleTap();
         },
         onTap: () {
           _action();
-          if (widget.onTap != null) widget.onTap();
+          widget.onTap();
         },
         onPanEnd: (details) {
           _action();
-          if (widget.onSwipe != null) widget.onSwipe();
+          widget.onSwipe();
         },
         child: Container(
           height: widget.height,

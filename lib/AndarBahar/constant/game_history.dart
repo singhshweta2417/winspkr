@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:fomoplay/AndarBahar/andarBaharModel/bet_history_con.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/AndarBahar/andarBaharModel/bet_history_con.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart'as http;
 

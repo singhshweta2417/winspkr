@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/custom_text_field.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/change_pass_view_modal.dart';
-import 'package:provider/provider.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/custom_text_field.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/main.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({super.key});
@@ -25,8 +21,8 @@ class _ChangePasswordState extends State<ChangePassword> {
 
   @override
   Widget build(BuildContext context) {
-    final changePasswordViewModel =
-        Provider.of<ChangePasswordViewModel>(context);
+    // final changePasswordViewModel =
+    //     Provider.of<ChangePasswordViewModel>(context);
 
     return Container(
       height: height * 0.55,
@@ -146,25 +142,25 @@ class _ChangePasswordState extends State<ChangePassword> {
                   color: AppColors.whiteColor,
                 )),
           ),
-          AppBtn(
-            loading: changePasswordViewModel.loading,
-            onTap: () {
-              if(oldPasswordCon.text.isEmpty){
-                Utils.flushBarErrorMessage("Enter password", context, );
-              } else if(newPasswordCon.text.isEmpty){
-                Utils.flushBarErrorMessage("Enter new password", context,);
-              }else if (confirmPasswordCon.text.isEmpty){
-                Utils.flushBarErrorMessage("Enter confirm password", context, );
-              }
-              else{
-                changePasswordViewModel.changePassApi(oldPasswordCon.text,
-                    newPasswordCon.text, confirmPasswordCon.text, context);
-              }
-            },
-            title: 'CONFIRM',
-            titleColor: AppColors.whiteColor,
-            gradient: AppColors.appBarGradient,
-          )
+          // AppBtn(
+          //   loading: changePasswordViewModel.loading,
+          //   onTap: () {
+          //     if(oldPasswordCon.text.isEmpty){
+          //       Utils.flushBarErrorMessage("Enter password", context, );
+          //     } else if(newPasswordCon.text.isEmpty){
+          //       Utils.flushBarErrorMessage("Enter new password", context,);
+          //     }else if (confirmPasswordCon.text.isEmpty){
+          //       Utils.flushBarErrorMessage("Enter confirm password", context, );
+          //     }
+          //     else{
+          //       changePasswordViewModel.changePassApi(oldPasswordCon.text,
+          //           newPasswordCon.text, confirmPasswordCon.text, context);
+          //     }
+          //   },
+          //   title: 'CONFIRM',
+          //   titleColor: AppColors.whiteColor,
+          //   gradient: AppColors.appBarGradient,
+          // )
         ],
       ),
     );

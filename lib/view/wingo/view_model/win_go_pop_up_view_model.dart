@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view/wingo/model/win_amount_model.dart';
-import 'package:fomoplay/view/wingo/repo/win_go_pop_up_repo.dart';
-import 'package:fomoplay/view/wingo/widgets/loss_pop_up.dart';
-import 'package:fomoplay/view/wingo/widgets/win_pop_up.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view/wingo/model/win_amount_model.dart';
+import 'package:wins_pkr/view/wingo/repo/win_go_pop_up_repo.dart';
+import 'package:wins_pkr/view/wingo/widgets/loss_pop_up.dart';
+import 'package:wins_pkr/view/wingo/widgets/win_pop_up.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class WinGoPopUpViewModel with ChangeNotifier {

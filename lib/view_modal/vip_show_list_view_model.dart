@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/model/vip_show_list_model.dart';
-import 'package:fomoplay/repo/vip_show_list_repo.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/model/vip_show_list_model.dart';
+import 'package:wins_pkr/repo/vip_show_list_repo.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class VipShowListViewModel with ChangeNotifier {
   final _vipShowListRepo = VipShowListRepository();

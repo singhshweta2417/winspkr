@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/vip/widget/vip_history.dart';
-import 'package:fomoplay/view/vip/widget/vip_rules.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/vip/widget/vip_history.dart';
+import 'package:wins_pkr/view/vip/widget/vip_rules.dart';
 
 
 class VipTab extends StatefulWidget {

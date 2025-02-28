@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:fomoplay/constants/app_colors.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
 
 
 
@@ -47,7 +47,7 @@ class CountdownTimerState extends State<DragonTigerTimer> {
                seconds <= 10
                   ? 'Showdown... $showdownSeconds'
                   : 'Bet time... $betTimeSeconds',
-              style:  TextStyle(  color: AppColors.goldColor,
+              style:  const TextStyle(  color: AppColors.goldColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w900),
             );

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 enum LinearStrokeCap { butt, round, roundAll }
 
 extension ExtDouble on double {
-  bool get isZero => this.toString() == '0.0';
+  bool get isZero => toString() == '0.0';
 }
 
 // ignore: must_be_immutable

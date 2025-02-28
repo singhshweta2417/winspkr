@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view/wingo/model/win_go_result_model.dart';
-import 'package:fomoplay/view/wingo/repo/win_go_result_repo.dart';
-import 'package:fomoplay/view/wingo/view_model/win_go_pop_up_view_model.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view/wingo/model/win_go_result_model.dart';
+import 'package:wins_pkr/view/wingo/repo/win_go_result_repo.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_pop_up_view_model.dart';
 
 class WinGoResultViewModel with ChangeNotifier {
   final _winGoResultRepo = WinGoResultRepository();

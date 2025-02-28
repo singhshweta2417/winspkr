@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/earn_money/controller/earn_money_controller.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/earn_money/controller/earn_money_controller.dart';
 
 class AboutList extends StatefulWidget {
   const AboutList({super.key});
@@ -90,10 +90,10 @@ class _AboutListState extends State<AboutList> {
                 decoration: BoxDecoration(
                   color:
                       isEven ? AppColors.lighterMaroon : AppColors.lightMarron,
-                  border: Border(
+                  border: const Border(
                       top: BorderSide(color: AppColors.whiteColor, width: 0.5)),
                   borderRadius: emc.peopleEarnList.length - 1 == index
-                      ? BorderRadius.only(
+                      ? const BorderRadius.only(
                           bottomLeft: Radius.circular(10),
                           bottomRight: Radius.circular(10),
                         )

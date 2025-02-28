@@ -242,7 +242,7 @@ class _CircularPercentIndicatorState extends State<CircularPercentIndicator>
       items.add(widget.header!);
     }
     items.add(
-      Container(
+      SizedBox(
         height: widget.radius,
         width: widget.radius,
         child: Stack(
@@ -269,7 +269,7 @@ class _CircularPercentIndicatorState extends State<CircularPercentIndicator>
               ),
               child: (widget.center != null)
                   ? Center(child: widget.center)
-                  : SizedBox.expand(),
+                  : const SizedBox.expand(),
             ),
             if (widget.widgetIndicator != null && widget.animation)
               Positioned.fill(
@@ -305,12 +305,10 @@ class _CircularPercentIndicatorState extends State<CircularPercentIndicator>
 
     return Material(
       color: widget.fillColor,
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: items,
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: items,
       ),
     );
   }
@@ -327,7 +325,7 @@ class _CircularPercentIndicatorState extends State<CircularPercentIndicator>
       }
       return radians(angle + margin * fixedPercent).toDouble();
     } else {
-      final angle = 360;
+      const angle = 360;
       return radians((widget.reverse ? -angle : angle) * _percent).toDouble();
     }
   }

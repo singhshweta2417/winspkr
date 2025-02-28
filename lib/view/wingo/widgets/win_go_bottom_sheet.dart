@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/view/wingo/res/size_const.dart';
-import 'package:fomoplay/view/wingo/controller/win_go_controller.dart';
-import 'package:fomoplay/view/wingo/view_model/win_go_bet_view_model.dart';
+import 'package:wins_pkr/view/wingo/res/size_const.dart';
+import 'package:wins_pkr/view/wingo/controller/win_go_controller.dart';
+import 'package:wins_pkr/view/wingo/view_model/win_go_bet_view_model.dart';
 
 
 class WinGoBottomSheet extends StatefulWidget {

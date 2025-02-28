@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/app_bar.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/circular_progress_indicator.dart';
-import 'package:fomoplay/view/deposit/widgets/deposit.dart';
-import 'package:fomoplay/view/deposit/widgets/withdraw.dart';
-import 'package:fomoplay/view/me/widgets/order_page.dart';
-import 'package:fomoplay/view_modal/deposit_view_modal.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/app_bar.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/circular_progress_indicator.dart';
+import 'package:wins_pkr/view/deposit/widgets/deposit.dart';
+import 'package:wins_pkr/view/deposit/widgets/withdraw.dart';
+import 'package:wins_pkr/view/me/widgets/order_page.dart';
+import 'package:wins_pkr/view_modal/deposit_view_modal.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class WalletScreen extends StatefulWidget {
@@ -55,9 +55,6 @@ class _WalletScreenState extends State<WalletScreen> {
                       SizedBox(
                         height: height * 0.2,
                         width: width,
-                        // decoration: const BoxDecoration(
-                        //   // gradient: AppColors.boxGradient,
-                        // ),
                         child: Column(
                           children: [
                             SizedBox(
@@ -112,7 +109,6 @@ class _WalletScreenState extends State<WalletScreen> {
                           child: Container(
                             width: width,
                             decoration: const BoxDecoration(
-                              //color: AppColors.whiteColor,
                                 gradient: AppColors.appBarGradient,
                                 borderRadius:
                                 BorderRadius.all(Radius.circular(10))),

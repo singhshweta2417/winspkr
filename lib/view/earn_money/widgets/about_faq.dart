@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/view/earn_money/controller/earn_money_controller.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/view/earn_money/controller/earn_money_controller.dart';
 
 class AboutFaq extends StatelessWidget {
   const AboutFaq({super.key});
@@ -48,7 +48,7 @@ class AboutFaq extends StatelessWidget {
               buildLevelDifferenceChart(),
               ListView.builder(
                 shrinkWrap: true,
-                padding: EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 10),
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: emc.levelThreeList.length,
                 itemBuilder: (context, index) {
@@ -56,7 +56,7 @@ class AboutFaq extends StatelessWidget {
                   bool isEven = index % 2 == 0;
                   return Container(
                     decoration: BoxDecoration(
-                      border: Border(
+                      border: const Border(
                           top: BorderSide(
                               color: AppColors.whiteColor, width: 0.5)),
                       color: isEven
@@ -119,7 +119,7 @@ class AboutFaq extends StatelessWidget {
             title: 'How to turn your friends into members?',
             content: [
               buildContentText(
-                'Log in to fomoplay, share your recommendation link with your friends on the recommendation page, guide them to register from the link, and they can become your direct members.\n'
+                'Log in to wins_pkr, share your recommendation link with your friends on the recommendation page, guide them to register from the link, and they can become your direct members.\n'
                 'Encourage your members to invite their friends to play games, and the friends they invite will become your indirect members.\n'
                 'When friends of your direct members become your indirect members, they can still grow their membership this way. All their sub-members will be considered as your indirect sub-members.',
               ),

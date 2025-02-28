@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:fomoplay/view/deposit/widgets/deposit.dart';
-import 'package:fomoplay/view/deposit/widgets/withdraw.dart';
-import 'package:fomoplay/view/vip/vip_page.dart';
+import 'package:wins_pkr/view/deposit/widgets/deposit.dart';
+import 'package:wins_pkr/view/deposit/widgets/withdraw.dart';
+import 'package:wins_pkr/view/vip/vip_page.dart';
 import 'package:provider/provider.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/constant_widgets/app_bar.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/view/auth/logout_page.dart';
-import 'package:fomoplay/view/bottom_nav_bar.dart';
-import 'package:fomoplay/view/me/controller/me_controller.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/constant_widgets/app_bar.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
+import 'package:wins_pkr/view/auth/logout_page.dart';
+import 'package:wins_pkr/view/me/controller/me_controller.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
 
 class MeScreen extends StatefulWidget {
   const MeScreen({super.key});
@@ -51,7 +50,7 @@ class _MeScreenState extends State<MeScreen> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => TestWidget()));
+                    builder: (context) => const TestWidget()));
           },
           scale: 1.6),
     ];

@@ -1,19 +1,21 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fomoplay/constants/app_button.dart';
-import 'package:fomoplay/constants/app_colors.dart';
-import 'package:fomoplay/constants/custom_text_field.dart';
-import 'package:fomoplay/constants/gradient_app_bar.dart';
-import 'package:fomoplay/constants/text_widget.dart';
-import 'package:fomoplay/generated/assets.dart';
-import 'package:fomoplay/main.dart';
-import 'package:fomoplay/res/constant_wallet.dart';
-import 'package:fomoplay/utils/routes/routers_name.dart';
-import 'package:fomoplay/utils/utils.dart';
-import 'package:fomoplay/view_modal/bank_view_model.dart';
-import 'package:fomoplay/view_modal/profile_view_model.dart';
-import 'package:fomoplay/view_modal/user_view_modal.dart';
-import 'package:fomoplay/view_modal/withdraw_view_modal.dart';
+import 'package:wins_pkr/constants/app_button.dart';
+import 'package:wins_pkr/constants/app_colors.dart';
+import 'package:wins_pkr/constants/custom_text_field.dart';
+import 'package:wins_pkr/constants/gradient_app_bar.dart';
+import 'package:wins_pkr/constants/text_widget.dart';
+import 'package:wins_pkr/generated/assets.dart';
+import 'package:wins_pkr/main.dart';
+import 'package:wins_pkr/res/constant_wallet.dart';
+import 'package:wins_pkr/utils/routes/routers_name.dart';
+import 'package:wins_pkr/utils/utils.dart';
+import 'package:wins_pkr/view_modal/bank_view_model.dart';
+import 'package:wins_pkr/view_modal/paymode_view_model.dart';
+import 'package:wins_pkr/view_modal/profile_view_model.dart';
+import 'package:wins_pkr/view_modal/usdt_withdraw_view_model.dart';
+import 'package:wins_pkr/view_modal/user_view_modal.dart';
+import 'package:wins_pkr/view_modal/withdraw_view_modal.dart';
 import 'package:provider/provider.dart';
 
 class Withdraw extends StatefulWidget {
@@ -24,10 +26,24 @@ class Withdraw extends StatefulWidget {
 }
 
 class _WithdrawState extends State<Withdraw> {
+  TextEditingController usdtCon = TextEditingController();
+  TextEditingController usdtRupeeCon = TextEditingController();
+  TextEditingController usdtAddress = TextEditingController();
   @override
   void initState() {
     super.initState();
     checkLogin();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<PaymodeViewModel>(context, listen: false).payModeApi(context);
+    });
+    usdtCon.addListener(() {
+      final input = double.tryParse(usdtCon.text) ?? 0;
+      usdtRupeeCon.text = (Provider.of<ProfileViewModel>(context, listen: false)
+                  .profileData!
+                  .usdtPayinAmount *
+              input)
+          .toStringAsFixed(2);
+    });
   }
 
   int selectedCard = 0;
@@ -48,12 +64,13 @@ class _WithdrawState extends State<Withdraw> {
     }
   }
 
-  List<Map<String, String>> items = [
-    {'title': 'E-Wallet', 'image': Assets.iconsUpiIcon},
-  ];
+  int selectUsdt = 0;
   @override
   Widget build(BuildContext context) {
     final bankViewModel = Provider.of<BankViewModel>(context);
+    final usdtViewModel = Provider.of<UsdtWithdrawViewModel>(context);
+    final paymodeViewModel =
+        Provider.of<PaymodeViewModel>(context).paymodeData?.data;
     final profileViewModel = Provider.of<ProfileViewModel>(context);
     return Consumer<WithdrawViewModel>(builder: (context, wwm, child) {
       return Scaffold(
@@ -97,7 +114,7 @@ class _WithdrawState extends State<Withdraw> {
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
-                    itemCount: items.length,
+                    itemCount: paymodeViewModel?.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
@@ -120,17 +137,22 @@ class _WithdrawState extends State<Withdraw> {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                Container(
+                                SizedBox(
                                     height: height * 0.05,
-                                    child: Image.asset(
-                                      items[index]['image']!,
-                                      fit: BoxFit.fill,
-                                    )),
+                                    child: paymodeViewModel != null
+                                        ? Image.network(paymodeViewModel[index]
+                                            .image
+                                            .toString())
+                                        : const TextWidget(
+                                            title: '',
+                                          )),
                                 const SizedBox(
                                   height: 10,
                                 ),
                                 Text(
-                                  items[index]['title']!,
+                                  paymodeViewModel != null
+                                      ? paymodeViewModel[index].name.toString()
+                                      : '',
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w900,
@@ -152,6 +174,166 @@ class _WithdrawState extends State<Withdraw> {
                 ),
                 selectedCard == 0
                     ? Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const TextWidget(
+                            textAlign: TextAlign.start,
+                            title: "Add USDT Address",
+                            fontSize: 14,
+                            color: AppColors.whiteColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          CustomTextField(
+                            widths: width * 0.92,
+                            controller: usdtAddress,
+                            fillColor: AppColors.whiteColor,
+                            maxLength: 10,
+                            keyboardType: TextInputType.emailAddress,
+                            hintText: "Enter USDT Address",
+                            hintColor: Colors.black,
+                            filled: true,
+                            textColor: AppColors.blackColor,
+                            prefixIcon: Image.asset(
+                              Assets.iconsUsdtIcon,
+                              scale: 3,
+                            ),
+                            cursorColor: AppColors.blackColor,
+                            onChanged: (v) {
+                              wwm.setGetWithdraw(double.parse(v));
+                            },
+                          ),
+                          const TextWidget(
+                            textAlign: TextAlign.start,
+                            title:
+                                "Need to add beneficiary information to be able to withdraw money",
+                            fontSize: 10,
+                            color: AppColors.whiteColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                                gradient: AppColors.appBarGradient),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        Assets.iconsUsdtIcon,
+                                        scale: 3,
+                                      ),
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
+                                      const Text(
+                                        'Select Amount of USDT',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w900,
+                                          color: AppColors.whiteColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.02,
+                                  ),
+                                  CustomTextField(
+                                    widths: width,
+                                    controller: usdtCon,
+                                    filled: true,
+                                    fillColor: AppColors.whiteColor,
+                                    textColor: AppColors.blackColor,
+                                    prefixIcon: Image.asset(
+                                      Assets.iconsUsdtIcon,
+                                      scale: 3,
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                    suffixIcon: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          usdtRupeeCon.clear();
+                                          usdtCon.clear();
+                                          selectUsdt = -1;
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.cancel_outlined,
+                                        color: AppColors.blackColor,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.02,
+                                  ),
+                                  CustomTextField(
+                                    widths: width,
+                                    controller: usdtRupeeCon,
+                                    filled: true,
+                                    readOnly: true,
+                                    fillColor: AppColors.whiteColor,
+                                    textColor: AppColors.blackColor,
+                                    prefixIcon: const Padding(
+                                      padding: EdgeInsets.only(top: 8.0),
+                                      child: Text(
+                                        textAlign: TextAlign.center,
+                                        'Rs',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w700),
+                                      ),
+                                    ),
+                                    keyboardType: TextInputType.number,
+                                    suffixIcon: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          selectUsdt = -1;
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.cancel_outlined,
+                                        color: AppColors.blackColor,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.02,
+                                  ),
+                                  AppBtn(
+                                    loading: usdtViewModel.loadingOne,
+                                    onTap: () async {
+                                      usdtViewModel.usdtWithdrawApi(
+                                          usdtAddress.text.toString(),
+                                          usdtCon.text.toString(),
+                                          usdtRupeeCon.text.toString(),
+                                          context);
+                                    },
+                                    height: height * 0.05,
+                                    width: width * 0.9,
+                                    title: 'Submit',
+                                    titleColor: AppColors.whiteColor,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    gradient: AppColors.appButton,
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.02,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Column(
                         children: [
                           bankViewModel.bankDataModel != null &&
                                   bankViewModel.bankDataModel!.data!.isNotEmpty
@@ -371,6 +553,7 @@ class _WithdrawState extends State<Withdraw> {
                                       wwm.withdrawCon.text,
                                       bankViewModel.bankDataModel!
                                           .data![wwm.selectedBank].id,
+                                      "2",
                                       context);
                                 }
                               } else {
@@ -384,172 +567,6 @@ class _WithdrawState extends State<Withdraw> {
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             gradient: AppColors.appButton,
-                          ),
-                        ],
-                      )
-                    : Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const TextWidget(
-                            textAlign: TextAlign.start,
-                            title: "Add USDT Address",
-                            fontSize: 14,
-                            color: AppColors.whiteColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: height * 0.02,
-                          ),
-                          CustomTextField(
-                            widths: width * 0.92,
-                            controller: wwm.usdtAddress,
-                            fillColor: AppColors.whiteColor,
-                            maxLength: 10,
-                            keyboardType: TextInputType.emailAddress,
-                            hintText: "Enter USDT Address",
-                            hintColor: Colors.black,
-                            filled: true,
-                            textColor: AppColors.blackColor,
-                            prefixIcon: Image.asset(
-                              Assets.iconsUsdtIcon,
-                              scale: 3,
-                            ),
-                            cursorColor: AppColors.blackColor,
-                            onChanged: (v) {
-                              wwm.setGetWithdraw(double.parse(v));
-                            },
-                          ),
-                          const TextWidget(
-                            textAlign: TextAlign.start,
-                            title:
-                                "Need to add beneficiary information to be able to withdraw money",
-                            fontSize: 10,
-                            color: AppColors.whiteColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: height * 0.02,
-                          ),
-                          Container(
-                            decoration: const BoxDecoration(
-                                gradient: AppColors.appBarGradient),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Image.asset(
-                                        Assets.iconsUsdtIcon,
-                                        scale: 3,
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      const Text(
-                                        'Select Amount of USDT',
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w900,
-                                          color: AppColors.whiteColor,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: height * 0.02,
-                                  ),
-                                  CustomTextField(
-                                    widths: width * 0.92,
-                                    controller: wwm.withdrawCon,
-                                    fillColor: AppColors.whiteColor,
-                                    maxLength: 10,
-                                    keyboardType: TextInputType.number,
-                                    hintText: "Enter Withdrawal Amount",
-                                    hintColor: Colors.grey,
-                                    filled: true,
-                                    prefixIcon: const Icon(
-                                        Icons.currency_rupee_outlined),
-                                    cursorColor: AppColors.whiteColor,
-                                    textColor: AppColors.blackColor,
-                                    onChanged: (v) {
-                                      wwm.setGetWithdraw(double.parse(v));
-                                    },
-                                  ),
-                                  SizedBox(
-                                    height: height * 0.02,
-                                  ),
-                                  CustomTextField(
-                                    widths: width * 0.92,
-                                    controller: wwm.usdtAmount,
-                                    fillColor: AppColors.whiteColor,
-                                    maxLength: 10,
-                                    keyboardType: TextInputType.emailAddress,
-                                    hintText: "Enter USDT Amount",
-                                    hintColor: Colors.grey,
-                                    textColor: AppColors.blackColor,
-                                    filled: true,
-                                    prefixIcon: Image.asset(
-                                      Assets.iconsUsdtIcon,
-                                      scale: 3,
-                                    ),
-                                    cursorColor: AppColors.whiteColor,
-                                    onChanged: (v) {
-                                      wwm.setGetWithdraw(double.parse(v));
-                                    },
-                                  ),
-                                  SizedBox(
-                                    height: height * 0.02,
-                                  ),
-                                  AppBtn(
-                                    loading: wwm.loading,
-                                    onTap: () async {
-                                      UserViewModel userViewModal =
-                                          UserViewModel();
-                                      String? userId =
-                                          await userViewModal.getUser();
-                                      if (userId != null) {
-                                        if (bankViewModel.bankDataModel !=
-                                                null &&
-                                            bankViewModel
-                                                .bankDataModel!.data!.isEmpty) {
-                                          Utils.flushBarErrorMessage(
-                                            "Add bank account/ Easypaisa/ jazzcash",
-                                            context,
-                                          );
-                                        } else if (wwm
-                                            .withdrawCon.text.isEmpty) {
-                                          Utils.flushBarErrorMessage(
-                                            "Enter withdrawal amount",
-                                            context,
-                                          );
-                                        } else {
-                                          wwm.withdrawApi(
-                                              wwm.withdrawCon.text,
-                                              bankViewModel.bankDataModel!
-                                                  .data![wwm.selectedBank].id,
-                                              context);
-                                        }
-                                      } else {
-                                        Navigator.pushNamed(
-                                            context, RoutesName.login);
-                                      }
-                                    },
-                                    height: height * 0.05,
-                                    width: width * 0.9,
-                                    title: 'Submit',
-                                    titleColor: AppColors.whiteColor,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    gradient: AppColors.appButton,
-                                  ),
-                                  SizedBox(
-                                    height: height * 0.02,
-                                  ),
-                                ],
-                              ),
-                            ),
                           ),
                         ],
                       ),

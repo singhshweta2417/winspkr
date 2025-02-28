@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:fomoplay/helper/network/base_api_services.dart';
-import 'package:fomoplay/helper/network/network_api_services.dart';
-import 'package:fomoplay/res/api_urls.dart';
+import 'package:wins_pkr/helper/network/base_api_services.dart';
+import 'package:wins_pkr/helper/network/network_api_services.dart';
+import 'package:wins_pkr/res/api_urls.dart';
 
 class AuthRepository {
   final BaseApiServices _apiServices = NetworkApiServices();
@@ -32,18 +32,21 @@ class AuthRepository {
     }
   }
 
-  Future<dynamic> verifyOtp(dynamic phone) async {
-    try {
-      dynamic response =
-      await _apiServices.getGetApiResponse("${ApiUrl.verifyOtp}$phone");
-      return response;
-    } catch (e) {
-      if (kDebugMode) {
-        print('Error occurred during verifyOtp: $e');
-      }
-      rethrow;
-    }
-  }
+  // Future<dynamic> verifyOtp(dynamic phone) async {
+  //   try {
+  //     dynamic response =
+  //     await _apiServices.getGetApiResponse("${ApiUrl.verifyOtp}$phone");
+  //     return response;
+  //   } catch (e) {
+  //     if (kDebugMode) {
+  //       print('Error occurred during verifyOtp: $e');
+  //     }
+  //
+  //     //https://root.winspkr.com/
+  //
+  //     rethrow;
+  //   }
+  // }
 
   Future<dynamic> checkExistNumber(dynamic data) async {
     try {
